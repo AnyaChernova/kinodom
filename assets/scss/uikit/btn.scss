@@ -1,0 +1,194 @@
+.btn {
+	@include btn();
+	font-weight: 500;
+
+	.spinner-svg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.md-icon {
+		font-size: 22px;
+	}
+}
+
+.btn.--loading {
+	opacity: 1;
+}
+
+.btn__content {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn.--thin {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.btn.--full {
+	width: 100%;
+}
+
+.btn.--xSmall {
+	min-height: 24px;
+	padding: 1px 12px;
+	font-size: 10px;
+	font-weight: 400;
+
+	.md-icon {
+		font-size: 16px;
+	}
+}
+
+.btn.--small {
+	min-height: 32px;
+	padding: 4px 14px;
+	font-size: 12px;
+	font-weight: 400;
+
+	.md-icon {
+		font-size: 18px;
+	}
+}
+
+.btn.--large {
+	min-height: 56px;
+	padding: 10px 40px;
+	font-size: 20px;
+	font-weight: 500;
+
+	.md-icon {
+		font-size: 36px;
+	}
+}
+
+.btn[class*="--c-"] {
+	background-color: rgba(var(--baseBtnColorRgb), .1);
+	color: var(--baseBtnColor);
+}
+
+.btn.--icon {
+	padding: 4px;
+	width: 48px;
+	height: 48px;
+	min-height: 48px;
+	background-color: transparent;
+	box-shadow: none;
+	color: var(--baseBtnColor);
+	&:hover {
+		background-color: transparent;
+		box-shadow: none;
+	}
+}
+
+.btn.--simple {
+	padding: 0;
+	min-height: 0;
+	background-color: transparent;
+	box-shadow: none;
+	color: var(--baseBtnColor);
+	&:hover {
+		background-color: transparent;
+		box-shadow: none;
+		opacity: 0.8;
+	}
+}
+
+.btn.--c-danger {
+	--baseBtnColor: #{$color-danger};
+	--baseBtnColorRgb: #{toRGB($color-danger)};
+}
+
+.btn.--c-black {
+	--baseBtnColor: #{$color-text};
+	--baseBtnColorRgb: #{toRGB($color-text)};
+}
+
+.btn.--c-gray {
+	--baseBtnColor: #{$color-gray-mid};
+	--baseBtnColorRgb: #{toRGB($color-gray-mid)};
+}
+
+.btn.--c-white {
+	--baseBtnColor: #{$color-white};
+	--baseBtnColorRgb: #{toRGB($color-white)};
+}
+
+.btn.--outline {
+	background-color: transparent;
+	color: $color-brand;
+	box-shadow: inset 0 0 0 1px $color-brand;
+	&:hover {
+		background-color: transparent;
+		color: $color-brand-light;
+		box-shadow: inset 0 0 0 1px $color-brand-light;
+	}
+}
+
+.btn.--outline-minor {
+	background-color: $color-white;
+	color: var(--baseBtnColor);
+	border: 1px solid $color-border;
+}
+
+.btn.--outside {
+	@include btnOutside10;
+}
+
+.btn.--outside5 {
+	@include btnOutside5;
+}
+
+.btn.--loading:not(.--simple) .btn__content {
+	color: transparent;
+}
+
+.btn.--loading.--simple {
+	.btn__content {
+		opacity: .1;
+	}
+}
+
+
+@keyframes moveProgress {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(100%);
+	}
+}
+
+.btn.--progressLoading {
+	opacity: .8;
+	overflow: hidden;
+
+	.btn__content {
+		position: relative;
+		z-index: 2;
+	}
+
+	&:before {
+		content: '';
+		display: block;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		transform: translateX(-100%);
+		background: linear-gradient(-90deg, rgba(#000, .4) 0%, rgba(#000, 0) 70%);
+		animation: moveProgress 2s ease infinite;
+		animation-direction: normal;
+	}
+
+	&.--outline:before,
+	&.btn[class*="--c-"]:before {
+		background: linear-gradient(-90deg, rgba(var(--baseBtnColorRgb), .4) 0%, rgba(var(--baseBtnColorRgb), 0) 70%);
+	}
+}

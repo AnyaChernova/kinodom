@@ -1,0 +1,22 @@
+.content {
+	padding-bottom: 110px;
+}
+
+.content__title {
+	margin-bottom: 48px;
+}
+
+.content__title--l {
+	margin-bottom: 56px;
+}
+
+@include media(s) {
+	.content__title {
+		margin-bottom: 16px;
+	}
+
+	.content__title--l {
+		margin-bottom: 32px;
+	}
+}
+

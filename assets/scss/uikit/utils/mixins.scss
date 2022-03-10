@@ -1,0 +1,216 @@
+@mixin list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+@mixin link {
+	display: inline-block;
+	text-decoration: none;
+	color: $color-brand;
+	cursor: pointer;
+	background-color: transparent;
+	border: 0;
+	padding: 0;
+	font-family: $font-family;
+	font-weight: inherit;
+	box-shadow: none;
+}
+
+@mixin btnClear {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: middle;
+	position: relative;
+	padding: 0;
+	margin: 0;
+	background-color: transparent;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	color: inherit;
+	text-align: center;
+	text-decoration: none;
+	font-family: $font-family;
+	line-height: $line-height;
+	font-size: $font-size;
+	font-weight: 400;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	cursor: pointer;
+}
+
+@mixin btn {
+	@include btnClear();
+	padding: 4px 20px;
+	min-height: 40px;
+	border-radius: $border-radius;
+	background-color: var(--baseBtnColor);
+	color: #fff;
+	text-align: center;
+	font-size: $font-size;
+}
+
+@mixin btnOutside10 {
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		top: -10px;
+		bottom: -10px;
+		left: -10px;
+		right: -10px;
+	}
+}
+
+@mixin btnOutside5 {
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		top: -5px;
+		bottom: -5px;
+		left: -5px;
+		right: -5px;
+	}
+}
+
+.btnOutside10 {
+	@include btnOutside10();
+}
+
+.btnOutside5 {
+	@include btnOutside5();
+}
+
+@mixin formControlStyle {
+	position: relative;
+	width: 100%;
+	min-width: 20px;
+	min-height: 40px;
+	padding: 3px 20px 3px;
+	border: 1px solid $color-border;
+	border-radius: $border-radius;
+	background-color: #fff;
+	box-shadow: none;
+	font-family: $font-family;
+	color: $color-text;
+	line-height: $line-height;
+	font-size: $font-size;
+	font-weight: 400;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	transition: border .05s ease;
+}
+
+@mixin formControlPlaceholderStyle {
+	color: $color-text;
+	opacity: .5;
+}
+
+@mixin formControlErrorStyle {
+	border: 1px solid $color-danger;
+	z-index: 3;
+}
+
+@mixin formControlDisableStyle {
+	cursor: not-allowed;
+	color: rgba($color-text, .7);
+}
+
+@mixin formControlFocusStyle {
+	border: 1px solid $color-brand;
+	box-shadow: none;
+	z-index: 2;
+	outline: none;
+}
+
+@mixin formControlFocusStyleDisable {
+	border: 1px solid $color-border;
+	box-shadow: none;
+	z-index: 2;
+	outline: none;
+}
+
+
+@mixin pseudoCross {
+	&:after,
+	&:before {
+		content: '';
+		display: block;
+		width: 20px;
+		height: 2px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-top: -1px;
+		margin-left: -10px;
+	}
+	&:after {
+		transform: rotateZ(45deg);
+	}
+	&:before {
+		transform: rotateZ(-45deg);
+	}
+}
+
+@mixin layout {
+	width: 100%;
+	min-width: 320px;
+	max-width: 1240px;
+	padding: 0 10px;
+	margin: 0 auto;
+	@include media(from, l) {
+		padding: 0 25px;
+	}
+	@include media(from, xl) {
+		padding: 0 36px;
+	}
+}
+
+
+@mixin title-xl {
+	font-size: 40px;
+	font-weight: 500;
+	line-height: 1.1;
+	@include media(xs) {
+		font-size: 30px;
+	}
+}
+
+@mixin title-l {
+	font-size: 25px;
+	font-weight: 500;
+	line-height: 1.2;
+	@include media(xs) {
+		font-size: 20px;
+	}
+}
+
+@mixin title {
+	font-size: 22px;
+	font-weight: 500;
+	line-height: $line-height;
+	@include media(xs) {
+		font-size: 20px;
+	}
+}
+
+@mixin title-s {
+	font-size: 17px;
+	font-weight: 500;
+	line-height: $line-height;
+	@include media(m) {
+		font-size: 16px;
+	}
+}
+
+@mixin title-xs {
+	font-size: 14px;
+	font-weight: normal;
+	color: $color-text-dark;
+	line-height: 1.4;
+}

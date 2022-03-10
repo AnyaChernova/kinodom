@@ -1,0 +1,58 @@
+.formArea__main {
+	min-height: 66px;
+	align-items: flex-end;
+	padding-bottom: 16px;
+}
+
+.formArea__before-inner {
+	font-size: 18px;
+	color: $color-label;
+	left: 8px;
+}
+
+.--select .formArea__after-inner {
+	color: $color-form;
+	right: 0;
+}
+
+.formArea__before-inner ~ .formControl {
+	padding-left: 30px;
+}
+
+.formField.--after {
+	.formArea__before-inner ~ .formControl {
+		padding-left: 42px;
+	}
+}
+
+.search {
+	.formArea__before-inner {
+		left: 16px;
+	}
+
+	.formArea__main {
+		min-height: unset;
+		align-items: flex-start;
+		padding-bottom: 0;
+	}
+}
+
+.formArea__clear {
+	height: 33px;
+	right: 5px;
+	top: unset;
+	transform: none;
+	bottom: 16px;
+}
+
+.formArea__clear:focus ~ .formControl {
+	border: none;
+	border-bottom: 1px solid $color-brand;
+}
+
+.search {
+	.formArea__clear:focus ~ .formControl {
+		border: none;
+	}
+}
+

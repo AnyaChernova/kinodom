@@ -1,0 +1,88 @@
+.search {
+	background-color: $color-white;
+	box-shadow: inset 0 0 0 1px $color-border;
+	border-radius: 32px;
+	padding: 0 8px 0 18px;
+	height: 56px;
+
+	.formArea {
+		--x-gap-icon:16px;
+		height: 100%;
+	}
+
+	& > .formArea {
+		border-radius: 32px;
+		overflow: hidden;
+	}
+
+	.formArea__after-inner .btn {
+		border-radius: 48px;
+	}
+
+	.formArea__before-inner {
+		display: inline-flex;
+	}
+
+	.formArea__after-inner ~ .formArea__clear {
+		right: 132px;
+	}
+
+	.formArea__after .btn {
+		border-radius: 48px;
+		margin-left: 16px;
+	}
+
+	.formArea__clear {
+		width: 12px;
+		height: 100%;
+		color: $color-form;
+		top: 0;
+	}
+
+	.formControl {
+
+		padding: 13px 24px 13px 0;
+
+		&::placeholder {
+			color: $color-text-dark;
+			opacity: 1;
+		}
+	}
+
+	.formSelect__search .formControl {
+		border-radius: 0;
+		padding-right: 20px;
+	}
+
+	.formFieldError {
+		display: none;
+	}
+}
+
+.search:hover .btn:not(:disabled) {
+	background-color: $color-brand;
+}
+
+.intro .search {
+	.formField.--searchPanel {
+		display: none;
+	}
+}
+
+.intro .active .search {
+	.formField.--searchPanel {
+		display: inline-block;
+	}
+}
+
+@include media(s) {
+	.search {
+		height: 48px;
+		padding: 0 16px;
+
+		.formControl {
+			min-height: 44px;
+			padding: 0;
+		}
+	}
+}

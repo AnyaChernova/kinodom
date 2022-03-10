@@ -1,0 +1,221 @@
+.scroll-box {
+	position: relative;
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+	/* Hide scrollbar for IE, Edge and Firefox */
+	&::-webkit-scrollbar {
+		display: none;
+		width: 0;
+	}
+}
+
+.scroll-box__observer {
+	visibility: hidden;
+	position: absolute;
+	//min-width: 100%;
+	//min-height: 100%;
+	top: 0;
+	left: 0;
+	//right: 0;
+	//bottom: 0;
+
+}
+
+.scroll-box__observerWrap {
+	position: absolute;
+	width: 0;
+	height: 0;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+.scroll-box__outer {
+	width: 0;
+	height: 0;
+	z-index: 1;
+	align-self: baseline;
+}
+
+.scroll-box__overlay {
+	position: relative;
+	pointer-events: none;
+	z-index: 2;
+	overflow: hidden;
+
+	.scroll-box__scroll-barY:hover {
+		.scroll-box__thumbY {
+			width: 100%;
+		}
+	}
+
+	.scroll-box__scroll-barX:hover {
+		.scroll-box__thumbX {
+			height: 100%;
+		}
+	}
+}
+
+.scroll-box__outer .scroll-box__overlay.scroll-box__overlay--show-on-hover {
+	.scroll-box__thumbY {
+		visibility: hidden;
+		opacity: 0;
+		transition: width linear 110ms, opacity .1s .5s linear, visibility .1s .5s linear, height 10ms, top 10ms;
+	}
+
+	.scroll-box__thumbX {
+		visibility: hidden;
+		opacity: 0;
+		transition: height linear 110ms, opacity .1s .5s linear, visibility .1s .5s linear, width 10ms, left 10ms;
+	}
+
+	&:hover {
+		.scroll-box__scroll-barY {
+			.scroll-box__thumbY {
+				visibility: visible;
+				opacity: 1;
+				transition: width linear 110ms, height 10ms, top 10ms;
+			}
+		}
+
+		.scroll-box__scroll-barX {
+			.scroll-box__thumbX {
+				visibility: visible;
+				opacity: 1;
+				transition: height linear 110ms, width 10ms, left 10ms;
+			}
+		}
+	}
+}
+
+.scroll-box__outer .scroll-box__overlay.scroll-box__overlay--hover.scroll-box__overlay--show-on-hover {
+	.scroll-box__scroll-barY {
+		.scroll-box__thumbY {
+			visibility: visible;
+			opacity: 1;
+			transition: width linear 110ms, height 10ms, top 10ms;
+		}
+	}
+
+	.scroll-box__scroll-barX {
+		.scroll-box__thumbX {
+			visibility: visible;
+			opacity: 1;
+			transition: height linear 110ms, width 10ms, left 10ms;
+		}
+	}
+}
+
+
+.scroll-box__outer .scroll-box__overlay.scroll-box__overlay--disable-drag {
+	.scroll-box__scroll-barY {
+		width: 3px;
+
+		.scroll-box__thumbY {
+			width: 100%
+		}
+	}
+
+	.scroll-box__scroll-barX {
+		height: 3px;
+
+		.scroll-box__thumbX {
+			height: 100%
+		}
+	}
+}
+
+.scroll-box__outer .scroll-box__overlay.scroll-box__overlay--disable-show-transition {
+	.scroll-box__thumbY {
+		visibility: hidden;
+		opacity: 0;
+		transition: width linear 110ms, height 10ms, top 10ms;
+	}
+
+	.scroll-box__thumbX {
+		visibility: hidden;
+		opacity: 0;
+		transition: height linear 110ms, width 10ms, left 10ms;
+	}
+}
+
+.scroll-box__scroll-barY {
+	display: block;
+	position: absolute;
+	width: 8px;
+	height: 100%;
+	background-color: transparent;
+	right: 0;
+	top: 0;
+	pointer-events: auto;
+}
+
+.scroll-box__thumbY {
+	display: block;
+	position: absolute;
+	min-height: 20px;
+	width: 33%;
+	margin-left: auto;
+	background-color: $color-brand;
+	border-radius: 4px;
+	right: 0;
+	transition: width linear 110ms, height 10ms, top 10ms;
+}
+
+.scroll-box__scroll-barX {
+	display: block;
+	position: absolute;
+	height: 8px;
+	width: 100%;
+	background-color: transparent;
+	left: 0;
+	bottom: 0;
+	pointer-events: auto;
+}
+
+.scroll-box__thumbX {
+	display: block;
+	position: absolute;
+	min-width: 20px;
+	height: 33%;
+	background-color: $color-brand;
+	border-radius: 4px;
+	bottom: 0;
+	transition: height linear 110ms, width 10ms, left 10ms;
+}
+
+.scroll-box__outer .scroll-box__overlay.scroll-box__overlay--drag {
+	.scroll-box__thumbX {
+		visibility: visible;
+		opacity: 1;
+		transition: none;
+	}
+
+	.scroll-box__thumbY {
+		visibility: visible;
+		opacity: 1;
+		transition: none;
+	}
+
+	.scroll-box__scroll-barX--full {
+		.scroll-box__thumbX {
+			height: 100%;
+
+		}
+	}
+
+	.scroll-box__scroll-barY--full {
+		.scroll-box__thumbY {
+			width: 100%;
+		}
+	}
+}
+
+.unselectable {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}

@@ -1,0 +1,204 @@
+// generate font-size
+.fz-0.fz-0 {
+	font-size: 0;
+}
+
+@for $index from 5 through 60 {
+	.fz-#{$index} {
+		font-size: ($index)+px;
+	}
+}
+
+@for $index from 2 through 7 {
+	.fw-#{$index}00 {
+		font-weight: $index*100;
+	}
+}
+
+// generate line-height
+@for $index from 0 to 10 {
+	$value: .1 * $index;
+	$selector: '1' + if($index == 0, '', ('\\.' + $index));
+	.lh-#{$selector} {
+		line-height: 1 + $value !important;
+	}
+}
+
+.lh-2 {
+	line-height: 2 !important;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-justify {
+	text-align: justify;
+}
+
+.text-white {
+	color: white;
+}
+
+.text-black {
+	color: black;
+}
+
+.text-brand {
+	color: $color-brand;
+}
+
+.text-danger {
+	color: $color-danger;
+}
+
+.text-gray {
+	color: $color-gray;
+}
+
+.text-upper {
+	text-transform: uppercase;
+}
+
+.text-lower {
+	text-transform: lowercase;
+}
+
+.align-baseline {
+	vertical-align: baseline;
+}
+
+.align-top {
+	vertical-align: top;
+}
+
+.align-middle {
+	vertical-align: middle;
+}
+
+.align-bottom {
+	vertical-align: bottom;
+}
+
+.ws-normal {
+	white-space: normal;
+}
+
+.ws-no-wrap {
+	white-space: nowrap;
+}
+
+.ws-pre {
+	white-space: pre;
+}
+
+.ws-pre-line {
+	white-space: pre-line;
+}
+
+.ws-pre-wrap {
+	white-space: pre-wrap;
+}
+
+.wb-all {
+	word-break: break-all;
+}
+
+.wb-break-word {
+	word-break: break-all;
+}
+
+.text-ellipsis {
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+@each $key, $val in $breakpoints-map {
+	@include media($key) {
+		//\:#{$key}
+		.#{$key}\:fz-0 {
+			font-size: 0;
+		}
+		@for $index from 5 through 60 {
+			.#{$key}\:fz-#{$index} {
+				font-size: ($index)+px;
+			}
+		}
+
+		@for $index from 2 through 7 {
+			.#{$key}\:fw-#{$index}00 {
+				font-weight: $index*100;
+			}
+		}
+
+		// generate line-height
+		@for $index from 0 to 10 {
+			$value: .1 * $index;
+			$selector: '1' + if($index == 0, '', ('\\.' + $index));
+			.#{$key}\:lh-#{$selector} {
+				line-height: 1 + $value !important;
+			}
+		}
+
+		.#{$key}\:lh-2 {
+			line-height: 2 !important;
+		}
+
+		.#{$key}\:text-left {
+			text-align: left;
+		}
+		.#{$key}\:text-center {
+			text-align: center;
+		}
+		.#{$key}\:text-right {
+			text-align: right;
+		}
+		.#{$key}\:text-justify {
+			text-align: justify;
+		}
+
+		.#{$key}\:text-white {
+			color: white;
+		}
+		.#{$key}\:text-black {
+			color: black;
+		}
+
+		.#{$key}\:align-baseline {
+			vertical-align: baseline;
+		}
+		.#{$key}\:align-top {
+			vertical-align: top;
+		}
+		.#{$key}\:align-middle {
+			vertical-align: middle;
+		}
+		.#{$key}\:align-bottom {
+			vertical-align: bottom;
+		}
+
+		.#{$key}\:ws-normal {
+			white-space: normal;
+		}
+		.#{$key}\:ws-no-wrap {
+			white-space: nowrap;
+		}
+		.#{$key}\:ws-pre {
+			white-space: pre;
+		}
+		.#{$key}\:ws-pre-line {
+			white-space: pre-line;
+		}
+		.#{$key}\:ws-pre-wrap {
+			white-space: pre-wrap;
+		}
+	}
+}

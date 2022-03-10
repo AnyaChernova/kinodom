@@ -1,0 +1,18 @@
+.popupPlate {
+	position: relative;
+	background-color: $color-white;
+	border-radius: 16px;
+	box-shadow: 0 0 32px rgba(0, 0, 0, 0.25);
+	padding: 48px 0;
+
+	.fieldset + .fieldset {
+		margin-top: 5px;
+	}
+}
+
+.popupPlate__close {
+	position: absolute;
+	top: 24px;
+	right: 24px;
+	z-index: 1;
+}

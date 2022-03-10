@@ -1,0 +1,261 @@
+.flex-row {
+	flex-direction: row;
+}
+
+.flex-row-reverse {
+	flex-direction: row-reverse;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+.flex-col-reverse {
+	flex-direction: column-reverse;
+}
+
+.flex-no-wrap {
+	flex-wrap: nowrap;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.flex-wrap-reverse {
+	flex-wrap: wrap-reverse;
+}
+
+.justify-start {
+	justify-content: flex-start;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.justify-end {
+	justify-content: flex-end;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.justify-around {
+	justify-content: space-around;
+}
+
+.items-stretch {
+	align-items: stretch;
+}
+
+.items-start {
+	align-items: flex-start;
+}
+
+.items-center {
+	align-items: center;
+}
+
+.items-end {
+	align-items: flex-end;
+}
+
+.items-baseline {
+	align-items: baseline;
+}
+
+.content-start {
+	align-content: flex-start;
+}
+
+.content-center {
+	align-content: center;
+}
+
+.content-end {
+	align-content: flex-end;
+}
+
+.content-between {
+	align-content: space-between;
+}
+
+.content-around {
+	align-content: space-around;
+}
+
+.self-auto {
+	align-self: auto;
+}
+
+.self-start {
+	align-self: flex-start;
+}
+
+.self-center {
+	align-self: center;
+}
+
+.self-end {
+	align-self: flex-end;
+}
+
+.self-stretch {
+	align-self: stretch;
+}
+
+.flex-grow {
+	flex-grow: 1;
+}
+
+.flex-grow-0 {
+	flex-grow: 0;
+}
+
+.flex-shrink {
+	flex-shrink: 1;
+}
+
+.flex-shrink-0 {
+	flex-shrink: 0;
+}
+
+.order-first {
+	order: -9999;
+}
+
+.order-last {
+	order: 9999;
+}
+
+.order-none {
+	order: 0;
+}
+
+@for $i from 0 through 10 {
+	.order-#{$i} {
+		order: $i;
+	}
+}
+
+@each $key, $val in $breakpoints-map {
+	@include media($key) {
+		.#{$key}\:flex-row {
+			flex-direction: row;
+		}
+		.#{$key}\:flex-row-reverse {
+			flex-direction: row-reverse;
+		}
+		.#{$key}\:flex-col {
+			flex-direction: column;
+		}
+		.#{$key}\:flex-col-reverse {
+			flex-direction: column-reverse;
+		}
+
+		.#{$key}\:flex-no-wrap {
+			flex-wrap: nowrap;
+		}
+		.#{$key}\:flex-wrap {
+			flex-wrap: wrap;
+		}
+		.#{$key}\:flex-wrap-reverse {
+			flex-wrap: wrap-reverse;
+		}
+
+		.#{$key}\:justify-start {
+			justify-content: flex-start;
+		}
+		.#{$key}\:justify-center {
+			justify-content: center;
+		}
+		.#{$key}\:justify-end {
+			justify-content: flex-end;
+		}
+		.#{$key}\:justify-between {
+			justify-content: space-between;
+		}
+		.#{$key}\:justify-around {
+			justify-content: space-around;
+		}
+
+		.#{$key}\:items-stretch {
+			align-items: stretch;
+		}
+		.#{$key}\:items-start {
+			align-items: flex-start;
+		}
+		.#{$key}\:items-center {
+			align-items: center;
+		}
+		.#{$key}\:items-end {
+			align-items: flex-end;
+		}
+		.#{$key}\:items-baseline {
+			align-items: baseline;
+		}
+
+		.#{$key}\:content-start {
+			align-content: flex-start;
+		}
+		.#{$key}\:content-center {
+			align-content: center;
+		}
+		.#{$key}\:content-end {
+			align-content: flex-end;
+		}
+		.#{$key}\:content-between {
+			align-content: space-between;
+		}
+		.#{$key}\:content-around {
+			align-content: space-around;
+		}
+
+		.#{$key}\:self-auto {
+			align-self: auto;
+		}
+		.#{$key}\:self-start {
+			align-self: flex-start;
+		}
+		.#{$key}\:self-center {
+			align-self: center;
+		}
+		.#{$key}\:self-end {
+			align-self: flex-end;
+		}
+		.#{$key}\:self-stretch {
+			align-self: stretch;
+		}
+
+		.#{$key}\:flex-grow {
+			flex-grow: 1;
+		}
+		.#{$key}\:flex-grow-0 {
+			flex-grow: 0;
+		}
+
+		.#{$key}\:flex-shrink {
+			flex-shrink: 1;
+		}
+		.#{$key}\:flex-shrink-0 {
+			flex-shrink: 0;
+		}
+
+		.#{$key}\:order-first {
+			order: -9999;
+		}
+		.#{$key}\:order-last {
+			order: 9999;
+		}
+		.#{$key}\:order-none {
+			order: 0;
+		}
+		@for $i from 0 through 10 {
+			.#{$key}\:order-#{$i} {
+				order: $i;
+			}
+		}
+	}
+}

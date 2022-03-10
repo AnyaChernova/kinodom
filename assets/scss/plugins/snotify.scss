@@ -1,0 +1,152 @@
+/*! purgecss start ignore */
+@import '~vue-snotify/styles/material.scss';
+
+.snotify-custom {
+	.snotify {
+		width: 310px;
+	}
+
+	.snotifyToast {
+		position: relative;
+		border-radius: 4px;
+		background-color: $color-white;
+
+		&:after {
+			content: '';
+			position: absolute;
+			z-index: 1;
+			top: -1px;
+			left: -1px;
+			width: calc(100% + 2px);
+			height: calc(100% + 2px);
+		}
+	}
+
+	.snotifyToast__progressBar {
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+		height: 5px;
+	}
+
+	.snotifyToast__progressBar__percentage {
+		height: 5px;
+	}
+
+	.snotifyToast__title {
+		font-size: $font-size;
+		line-height: $line-height;
+		font-weight: 500;
+	}
+
+	.snotifyToast__body {
+		font-size: 14px;
+		font-weight: normal;
+	}
+
+	.snotifyToast__inner {
+		padding: 15px 20px 15px 54px;
+		min-height: unset;
+		@include pseudoCross;
+		color: inherit;
+
+		&:before,
+		&:after {
+			top: 25px;
+			right: 15px;
+			width: 15px;
+			left: auto;
+			background-color: #000;
+			z-index: 2;
+		}
+	}
+
+	.snotifyToast__title,
+	.snotifyToast__body {
+		position: relative;
+		z-index: 2;
+
+		&:before {
+			content: '';
+			display: block;
+			width: 18px;
+			height: 18px;
+			position: absolute;
+			top: 50%;
+			left: -35px;
+			transform: translateY(-50%);
+			background-position: 50%;
+			background-repeat: no-repeat;
+		}
+	}
+
+	.snotifyToast__title + .snotifyToast__body {
+		&:before {
+			display: none;
+		}
+	}
+
+	.snotify-success {
+		&:after {
+			background-color: rgba($color-success, 0.2);
+		}
+		color: $color-success;
+
+		.snotifyToast__title,
+		.snotifyToast__body {
+			color: $color-success;
+		}
+
+		.snotifyToast__progressBar {
+			background-color: rgba($color-success, 0.5);
+		}
+
+		.snotifyToast__progressBar__percentage {
+			background-color: $color-success;
+		}
+
+		.snotifyToast__inner {
+			padding-left: 16px;
+
+			&:before,
+			&:after {
+				background-color: $color-success;
+			}
+		}
+	}
+
+	.snotify-error {
+		&:after {
+			background-color: rgba($color-danger, 0.2);
+		}
+		color: $color-danger;
+
+		.snotifyToast__title,
+		.snotifyToast__body {
+			color: $color-danger;
+
+			&:before {
+				background-image: url('~assets/sprite/svg/icons/error-red.svg');
+				width: 25px;
+				height: 25px;
+			}
+		}
+
+		.snotifyToast__progressBar {
+			background-color: rgba($color-danger, 0.2);
+		}
+
+		.snotifyToast__progressBar__percentage {
+			background-color: rgba($color-danger, 0.5);
+		}
+
+		.snotifyToast__inner {
+			&:before,
+			&:after {
+				background-color: $color-danger;
+			}
+		}
+	}
+}
+/*! purgecss end ignore */
+

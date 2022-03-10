@@ -1,0 +1,51 @@
+.formFieldGroup {
+}
+
+.formFieldGroup__item {
+	&.--s {
+		width: 100px;
+	}
+}
+
+.formFieldGroup.--auth {
+	position: relative;
+
+	.formField:first-child .formControl {
+		border-radius: 6px 6px 0 0;
+	}
+
+	.formField:last-child .formControl {
+		border-radius: 0 0 6px 6px;
+	}
+
+	.formField + .formField {
+		margin-top: 2px;
+	}
+
+	.formField {
+		position: relative;
+	}
+
+	.formFieldGroup__after {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 15px;
+		z-index: 10;
+	}
+
+	.formFieldGroup__caption {
+		position: absolute;
+		width: 100%;
+		max-width: 290px;
+		font-size: 14px;
+		line-height: 1.4;
+		text-align: center;
+		top: -40px;
+		left: 50%;
+		transform: translateX(-50%);
+		@include media(m) {
+			top: -10px;
+		}
+	}
+}

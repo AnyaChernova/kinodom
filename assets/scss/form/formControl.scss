@@ -1,0 +1,79 @@
+.formControl {
+	background-color: $color-white;
+	min-height: 48px;
+	padding: 16px 25px 3px 8px;
+	font-size: 18px;
+	line-height: 1.6;
+	border: none;
+	border-bottom: 1px solid $color-border;
+	border-radius: 4px 4px 0 0;
+
+	&::placeholder {
+		color: $color-label;
+	}
+
+	&:active,
+	&:focus {
+		border: none;
+		border-bottom: 1px solid $color-brand;
+		box-shadow: none;
+		outline: none;
+	}
+}
+
+.formControl:-webkit-autofill {
+	transition: background-color 5000s ease-in-out 0s;
+}
+
+.formControl.focus {
+	border: none;
+	border-bottom: 1px solid $color-brand;
+	box-shadow: none;
+	outline: none;
+	z-index: unset;
+}
+
+.formControl:disabled {
+	background-color: $color-gray-light;
+	color: $color-gray-mid;
+}
+
+.--writeOnly .formControl:disabled {
+	background-color: transparent;
+	color: $color-text;
+	-webkit-text-fill-color: $color-text;
+	opacity: 1;
+}
+
+.--writeOnly .formField.--float .formField__label {
+	cursor: not-allowed;
+}
+
+.formField.--error .formControl {
+	background-color: $color-danger-light;
+}
+
+textarea.formControl {
+	min-height: 30px;
+	height: 30px;
+	padding: 16px 25px 3px 8px;
+}
+
+.search .formControl {
+	border-bottom: none;
+
+	&.focus,
+	&:focus {
+		border: none;
+	}
+}
+
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+

@@ -1,0 +1,38 @@
+// generate transform
+$prefixList: (
+	t: 'translateY',
+	l: 'translateX',
+);
+//t[prefix]-[val]
+@each $prefixKey, $prefixValue in $prefixList {
+	@for $index from 0 through 10 {
+		$value: $index;
+		.t#{$prefixKey}-#{$value} {
+			transform: #{$prefixValue+'('+$value+px+')'};
+		}
+	}
+}
+
+//-t[prefix]-[val] -- отрицательные значения
+@each $prefixKey, $prefixValue in $prefixList {
+	@for $index from 1 through 10 {
+		$value: $index;
+		.-t#{$prefixKey}-#{$value} {
+			transform: #{$prefixValue+'(-'+$value+px+')'};
+		}
+	}
+}
+
+// [size]:t[prefix]-[val]
+@each $key, $val in $breakpoints-map {
+	@include media($key) {
+		@each $prefixKey, $prefixValue in $prefixList {
+			@for $index from -10 through 10 {
+				$value: $index;
+				.#{$key}\:t#{$prefixKey}-#{$value} {
+					transform: #{$prefixValue+'('+$value+px+')'};
+				}
+			}
+		}
+	}
+}

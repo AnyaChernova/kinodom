@@ -1,0 +1,154 @@
+.d-block {
+	display: block;
+}
+
+.d-inline-block {
+	display: inline-block;
+}
+
+.d-inline {
+	display: inline;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.d-inline-flex {
+	display: inline-flex;
+}
+
+.d-table {
+	display: table;
+}
+
+.d-table-cell {
+	display: table-cell;
+}
+
+.d-table-row {
+	display: table-row;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.stealth {
+	display: block;
+	position: absolute;
+	opacity: 0;
+	width: 1px;
+	height: 1px;
+	pointer-events: none;
+}
+
+.dib-baseline {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+.dib-top {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.dib-middle {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.dib-bottom {
+	display: inline-block;
+	vertical-align: bottom;
+}
+
+@each $key, $val in $breakpoints-map {
+	@include media($key) {
+		.#{$key}\:d-block {
+			display: block;
+		}
+		.#{$key}\:d-inline-block {
+			display: inline-block;
+		}
+		.#{$key}\:d-inline {
+			display: inline;
+		}
+		.#{$key}\:d-flex {
+			display: flex;
+		}
+		.#{$key}\:d-inline-flex {
+			display: inline-flex;
+		}
+		.#{$key}\:d-table {
+			display: table;
+		}
+		.#{$key}\:d-table-cell {
+			display: table-cell;
+		}
+		.#{$key}\:d-table-row {
+			display: table-row;
+		}
+		.#{$key}\:hidden {
+			display: none !important;
+		}
+		.#{$key}\:stealth {
+			display: block;
+			position: absolute;
+			opacity: 0;
+			width: 1px;
+			height: 1px;
+			pointer-events: none;
+		}
+	}
+	@include media(from, $key) {
+		.from-#{$key}\:hidden {
+			display: none !important;
+		}
+	}
+}
+
+// range
+@each $keyTo, $valTo in $breakpoints-map {
+	@each $keyFrom, $valFrom in $breakpoints-map {
+		@if $valTo > $valFrom {
+			@include media($keyFrom, $keyTo) {
+				.#{$keyFrom}-#{$keyTo}\:d-block {
+					display: block;
+				}
+				.#{$keyFrom}-#{$keyTo}\:d-inline-block {
+					display: inline-block;
+				}
+				.#{$keyFrom}-#{$keyTo}\:d-inline {
+					display: inline;
+				}
+				.#{$keyFrom}-#{$keyTo}\:d-flex {
+					display: flex;
+				}
+				.#{$keyFrom}-#{$keyTo}\:d-inline-flex {
+					display: inline-flex;
+				}
+				.#{$keyFrom}-#{$keyTo}\:d-table {
+					display: table;
+				}
+				.#{$keyFrom}-#{$keyTo}\:d-table-cell {
+					display: table-cell;
+				}
+				.#{$keyFrom}-#{$keyTo}\:d-table-row {
+					display: table-row;
+				}
+				.#{$keyFrom}-#{$keyTo}\:hidden {
+					display: none !important;
+				}
+				.#{$keyFrom}-#{$keyTo}\:stealth {
+					display: block;
+					position: absolute;
+					opacity: 0;
+					width: 1px;
+					height: 1px;
+					pointer-events: none;
+				}
+			}
+		}
+	}
+}

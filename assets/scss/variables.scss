@@ -1,0 +1,50 @@
+$font-family: 'Roboto', sans-serif;
+$font-family-title: 'Museo Sans Cyrl', sans-serif;
+$font-size: 14px;
+$font-size-form: 18px;
+$line-height: 1.4;
+$border-radius: 16px;
+
+$color-brand: #00CAD7;
+$color-brand-light: #00E1F0;
+$color-back: #F2F2F2;
+
+$color-white: #FFFFFF;
+$color-black: #000000;
+
+$color-danger: #FF4520;
+$color-danger-light: #FCEAEB;
+$color-gold: #C9AD65;
+$color-success: #20C34E;
+$color-accent: #FF7041;
+$color-ok: #01BE9C;
+$color-blue: #419FD9;
+
+$color-text: #666666;
+$color-text-dark: #404040;
+$color-text-gray: #333333;
+$color-text-brand: #00B6C2;
+
+$color-gray: rgba(0, 0, 0, 0.5);
+$color-gray-light: #FAFAFA;
+$color-gray-mid: #C0C0C0;
+$color-gray-dark: #D9D9D9;
+$color-border: #C6C6C6;
+$color-border-dark: #CCCCCC;
+$color-form: #808080;
+$color-label: #B3B3B3;
+$color-inactive: #F7F7F7;
+$color-plate: #FCFCFC;
+
+
+$breakpoints-map: (
+	xxxl: 1400,
+	xxl: 1180,
+	xl: 1080,
+	l: 960,
+	m: 768,
+	s: 640,
+	xs: 480,
+	xxs: 400,
+	xxxs: 370
+);

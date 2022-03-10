@@ -1,0 +1,25 @@
+@import "normalize.css";
+/*! purgecss start ignore */
+@import 'swiper/css/swiper.css';
+@import 'vue-slider-component/dist-css/vue-slider-component.css';
+@import 'vue-slider-component/theme/default.css';
+/*! purgecss end ignore */
+
+@import "./variables.scss";
+
+@import "./uikit/utils/*.scss";
+@import "./uikit/*.scss";
+
+@import "./utils/*.scss";
+
+/*! purgecss start ignore */
+@import './plugins/*.scss';
+/*! purgecss end ignore */
+
+@import './base/*.scss';
+@import './layout/*.scss';
+@import './form/*.scss';
+@import './block/*.scss';
+
+@import './uikit/service/*.scss';
+@import './service/*.scss';

@@ -1,0 +1,32 @@
+.rating {
+
+}
+.rating__back {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	color: $color-gray-dark;
+	position: relative;
+}
+.rating__front {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	color: $color-gold;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+.rating__item {
+	flex-shrink: 0;
+	margin-right: 3px;
+	height: 12px;
+	&:last-child {
+		margin-right: 0;
+	}
+
+	svg {
+		vertical-align: top;
+	}
+}

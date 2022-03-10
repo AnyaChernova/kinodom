@@ -1,0 +1,33 @@
+.picUpload {
+	width: 48px;
+	height: 48px;
+	border-radius: 4px;
+	color: $color-white;
+	&:hover {
+		background-color: $color-brand;
+	}
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 4px;
+	}
+}
+
+.btn.picUpload {
+	width: 48px;
+	height: 48px;
+	border-radius: 4px;
+	color: $color-white;
+	&:hover {
+		background-color: $color-brand;
+		opacity: 1;
+	}
+}
+
+.picUploadRow {
+	display: flex;
+	.picUpload:not(:last-child) {
+		margin-right: 10px;
+	}
+}

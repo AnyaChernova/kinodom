@@ -1,0 +1,46 @@
+.formControl {
+	@include formControlStyle;
+
+	&::placeholder {
+		@include formControlPlaceholderStyle;
+	}
+
+	&.--error {
+		@include formControlErrorStyle;
+	}
+
+	&.disabled,
+	&:disabled {
+		@include formControlDisableStyle;
+	}
+
+	&:focus,
+	&.focus {
+		@include formControlFocusStyle;
+	}
+}
+
+textarea.formControl {
+	min-height: 60px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	resize: none !important;
+}
+
+select.formControl.formControl {
+	@include formControlFocusStyleDisable;
+	background-image: url('~@/assets/sprite/svg/icons/arrow-down.svg');
+	background-repeat: no-repeat;
+	background-size: 14px;
+	background-position: calc(100% - 15px) 50%;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+.formControl--small {
+	min-height: 32px;
+	padding-left: 12px;
+	padding-right: 12px;
+}

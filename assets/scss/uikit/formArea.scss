@@ -1,0 +1,140 @@
+.formArea {
+	--x-gap-icon: 14px;
+	--x-gap-padding-input: 46px;
+	--x-gap-padding-input-x2: 70px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+
+	.md-icon {
+		display: block;
+	}
+}
+
+.formArea__main {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+	flex-grow: 1;
+	flex-shrink: 1;
+	order: 2;
+	position: relative;
+}
+
+.formArea__before {
+	flex-grow: 0;
+	flex-shrink: 0;
+	order: 1;
+}
+
+.formArea__after {
+	flex-grow: 0;
+	flex-shrink: 0;
+	order: 3;
+}
+
+.formArea__clear {
+	@include btnClear;
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	transform: translateY(-50%);
+	height: 40px;
+	z-index: 3;
+	color: $color-border;
+
+	&:hover {
+		color: rgba($color-danger, .5);
+	}
+}
+
+
+.formArea__before-inner,
+.formArea__after-inner {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 3;
+	color: $color-gray;
+	pointer-events: none;
+}
+
+.formArea__before-inner {
+	left: var(--x-gap-icon);
+}
+
+.formArea__after-inner {
+	right: var(--x-gap-icon);
+}
+
+.formArea__before-inner ~ .formControl {
+	padding-left: var(--x-gap-padding-input);
+}
+
+.formArea__after-inner ~ .formControl {
+	padding-right: var(--x-gap-padding-input);
+}
+
+.formArea__after-inner ~ .formControl {
+	padding-right: var(--x-gap-padding-input);
+}
+
+
+.formArea__clear ~ .formControl {
+	padding-right: var(--x-gap-padding-input);
+}
+
+.formArea__after-inner ~ .formArea__clear {
+	right: var(--x-gap-padding-input);
+}
+
+.formArea__after-inner ~ .formArea__clear ~ .formControl {
+	padding-right: var(--x-gap-padding-input-x2);
+}
+
+.formArea__clear:focus ~ .formControl {
+	@include formControlFocusStyle;
+}
+
+.formArea__before {
+	.btn {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		margin-right: -1px;
+	}
+}
+
+.formArea__after {
+	.btn {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		margin-left: -1px;
+	}
+}
+
+.formArea__before ~ .formArea__main {
+	.formControl {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+}
+
+.formArea__after ~ .formArea__main {
+	.formControl {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+}
+
+.formArea--small {
+	--x-gap-icon: 8px;
+	--x-gap-padding-input: 32px;
+	--x-gap-padding-input-x2: 56px;
+	min-height: 32px;
+
+	.md-icon {
+		font-size: 18px;
+	}
+}

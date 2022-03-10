@@ -1,0 +1,26 @@
+.badge {
+	border-radius: 4px;
+	padding: 0 4px;
+	height: 20px;
+	font-size: 14px;
+}
+
+.badge.--c-black {
+	--baseBgColor: #{$color-text-dark};
+}
+
+.badge.--c-gray {
+	--baseBgColor: #{$color-gray-dark};
+}
+
+.badge.--c-accent {
+	--baseBgColor: #{$color-accent};
+}
+
+.badge.--c-danger {
+	--baseBgColor: #{$color-danger};
+}
+
+.badge.--c-ok {
+	--baseBgColor: #{$color-ok};
+}

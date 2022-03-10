@@ -1,0 +1,93 @@
+html {
+	-webkit-tap-highlight-color: transparent;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	color: $color-text;
+	font-family: $font-family;
+	font-size: $font-size;
+	font-weight: 400;
+	line-height: $line-height;
+
+	text-rendering: optimizeSpeed;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+}
+
+body.disableScroll,
+body.disableScroll .page {
+	overflow: hidden;
+}
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+.__nuxt-error-page {
+	z-index: 1000;
+}
+
+.disableOutline *,
+*:before,
+*:after {
+	outline: none;
+}
+
+.no-scroll {
+	@include media(m) {
+		overflow: hidden;
+	}
+}
+
+svg {
+	display: inline-block;
+	vertical-align: middle;
+	flex-shrink: 0;
+}
+
+img {
+	position: relative;
+	overflow: hidden;
+	vertical-align: middle;
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		background-color: $color-plate;
+		background-size: cover;
+	}
+}
+
+/*! purgecss start ignore */
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+	display:none;
+}
+.gmnoprint div {
+	background:none !important;
+}
+
+.lazyLoad {
+	opacity: 0;
+}
+
+.isLoaded {
+	animation-name: fadeIn;
+	animation-duration: 0.4s;
+	animation-timing-function: ease-in;
+	animation-fill-mode: both;
+}
+
+/*! purgecss end ignore */

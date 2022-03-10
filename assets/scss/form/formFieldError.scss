@@ -1,0 +1,11 @@
+.formFieldError {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	padding-left: 8px;
+	color: $color-danger;
+	font-size: 12px;
+	line-height: 1;
+	z-index: 1;
+}

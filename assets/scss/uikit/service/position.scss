@@ -1,0 +1,130 @@
+.static {
+	position: static;
+}
+
+.fixed {
+	position: fixed;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.relative {
+	position: relative;
+}
+
+.sticky {
+	position: sticky;
+}
+
+.top-auto {
+	top: auto;
+}
+
+.bottom-auto {
+	bottom: auto;
+}
+
+.left-auto {
+	left: auto;
+}
+
+.right-auto {
+	right: auto;
+}
+
+.align-self-start {
+	align-self: flex-start;
+}
+
+.align-self-center {
+	align-self: center;
+}
+
+.align-self-end {
+	align-self: flex-end;
+}
+
+.absolute-center {
+	@extend .absolute;
+	@extend .top-50;
+	@extend .left-50;
+	transform: translate(-50%, -50%);
+}
+
+@for $index from 0 through 100 {
+	$value: $index;
+	.top-#{$value} {
+		top: $value*1%;
+	}
+	.bottom-#{$value} {
+		bottom-: $value*1%;
+	}
+	.left-#{$value} {
+		left: $value*1%;
+	}
+	.right-#{$value} {
+		right: $value*1%;
+	}
+}
+
+@for $index from 0 through 10 {
+	$value: $index;
+	.z-#{$value} {
+		z-index: $value;
+	}
+}
+
+@each $key, $val in $breakpoints-map {
+	@include media($key) {
+		.#{$key}\:static {
+			position: static;
+		}
+		.#{$key}\:fixed {
+			position: fixed;
+		}
+		.#{$key}\:absolute {
+			position: absolute;
+		}
+		.#{$key}\:relative {
+			position: relative;
+		}
+		.#{$key}\:sticky {
+			position: sticky;
+		}
+
+		.#{$key}\:top-0 {
+			top: 0;
+		}
+		.#{$key}\:right-0 {
+			right: 0;
+		}
+		.#{$key}\:bottom-0 {
+			bottom: 0;
+		}
+		.#{$key}\:left-0 {
+			left: 0;
+		}
+
+		.#{$key}\:top-auto {
+			top: auto;
+		}
+		.#{$key}\:bottom-auto {
+			bottom: auto;
+		}
+		.#{$key}\:left-auto {
+			left: auto;
+		}
+		.#{$key}\:right-auto {
+			right: auto;
+		}
+
+		@for $index from 0 through 10 {
+			$value: $index;
+			.#{$key}\:z-#{$value} {
+				z-index: $value;
+			}
+		}
+	}
+}

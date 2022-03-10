@@ -1,0 +1,27 @@
+.title {
+	@include title;
+}
+
+.title-xxs {
+	@include title-xxs;
+}
+
+.title-xs {
+	@include title-xs;
+}
+
+.title-s {
+	@include title-s;
+}
+
+.title-m {
+	@include title-m;
+}
+
+.title-l {
+	@include title-l;
+}
+
+.title-xl {
+	@include title-xl;
+}

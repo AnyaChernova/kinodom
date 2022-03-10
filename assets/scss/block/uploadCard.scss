@@ -1,0 +1,79 @@
+.uploadCard {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	line-height: 1.6;
+	font-size: 18px;
+
+	&:hover {
+		opacity: 0.8;
+		cursor: pointer;
+	}
+}
+
+.uploadCard--m {
+	.uploadCard__footer {
+		margin-top: 32px;
+	}
+}
+
+.uploadCard.--error {
+	.uploadCard__pic,
+	.uploadCard__content {
+		border-color: rgba($color-danger, 0.4);
+	}
+}
+
+.uploadCard__description {}
+
+.uploadCard__footer {
+	margin-top: 48px;
+}
+
+.uploadCard__titleLarge {
+	@include title-s;
+	color: $color-gray;
+	padding: 20px;
+}
+
+.uploadCard__placeholder,
+.uploadCard__hoverPlaceholder {
+	padding: 25px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: $border-radius;
+	border: 2px dashed $color-brand;
+	color: $color-label;
+	text-align: center;
+}
+
+.uploadCard__placeholder {
+	position: relative;
+}
+
+.uploadCard__hoverPlaceholder {
+	position: absolute;
+	top: -2px;
+	right: -2px;
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	z-index: 5;
+	border: 2px solid $color-brand;
+	background-color: $color-white;
+}
+
+.uploadCard.highlight {
+	*, *:before, *:after {
+		pointer-events: none;
+	}
+}
+
+.hoverPlaceholder-enter-active, .hoverPlaceholder-leave-active {
+	transition: opacity .1s;
+}
+
+.hoverPlaceholder-enter, .hoverPlaceholder-leave-to {
+	opacity: 0;
+}

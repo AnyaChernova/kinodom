@@ -1,0 +1,26 @@
+.tagRow {
+	margin: 0 -8px;
+	font-size: 18px;
+	line-height: 1.6;
+
+	.tag {
+		display: inline-block;
+		padding: 0 8px;
+		position: relative;
+	}
+
+	.tag:not(:last-child) {
+		&:after {
+			position: absolute;
+			top: 50%;
+			right: -3px;
+			transform: translateY(calc(-50% - 1px));
+			display: block;
+			width: 3px;
+			height: 3px;
+			content: "";
+			background-color: currentColor;
+			border-radius: 50%;
+		}
+	}
+}

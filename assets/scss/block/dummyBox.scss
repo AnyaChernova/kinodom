@@ -1,0 +1,18 @@
+.dummyBox {
+	margin: 0 auto;
+	text-align: center;
+	padding: 90px 0;
+	color: $color-label;
+}
+
+.dummyBox__pic {
+	max-width: 100%;
+}
+
+.dummyBox__title {
+	margin-top: 35px;
+	font-size: 18px;
+	font-weight: 600;
+	font-family: $font-family-title;
+	line-height: 1.2;
+}

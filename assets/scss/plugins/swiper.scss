@@ -1,0 +1,20 @@
+.swiper-lazy {
+	opacity: 0;
+}
+
+.swiper-lazy-preloader {
+	width: 30px;
+	height: 30px;
+	margin-left: -15px;
+	margin-top: -15px;
+	border-color: $color-brand;
+	border-top-color: transparent;
+	border-width: 2px;
+}
+
+/*! purgecss start ignore */
+.swiper-lazy-loaded {
+	opacity: 1;
+}
+/*! purgecss end ignore */
+

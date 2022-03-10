@@ -1,0 +1,185 @@
+.formOption {
+	--element-size: 20px;
+	display: inline-flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	vertical-align: center;
+	min-height: var(--element-size);
+	min-width: var(--element-size);
+	margin: 0;
+	position: relative;
+	font-style: normal;
+	color: inherit;
+	font-size: $font-size-form;
+
+	input[type="checkbox"],
+	input[type="radio"] {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		visibility: hidden;
+		cursor: pointer;
+	}
+}
+
+.formOption__element {
+	display: block;
+	height: var(--element-size);
+	width: var(--element-size);
+	vertical-align: center;
+	background-color: #fff;
+	border: 1px solid $color-border;
+	border-radius: 4px;
+	color: $color-text;
+	transition: all .1s ease, visibility 0s;
+	position: relative;
+	cursor: pointer;
+}
+
+.formOption__element--switch {
+	width: calc(var(--element-size) * 2);
+}
+
+.formOption__content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	align-self: stretch;
+	padding-left: 12px;
+	position: relative;
+	cursor: pointer;
+}
+
+.formOption__label {
+	display: block;
+	padding-top: 1px;
+}
+
+.formOption__caption {
+	display: block;
+	font-size: 12px;
+	color: $color-gray;
+}
+
+
+input[type="radio"] ~ .formOption__element:before,
+input[type="checkbox"] ~ .formOption__element:before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	opacity: 0;
+	transition: all .1s ease;
+}
+
+input[type="checkbox"] ~ .formOption__element.formOption__element--switch {
+	border-radius: var(--element-size);
+	background-color: $color-gray-light;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 1px;
+		background-image: none;
+		width: calc(var(--element-size) - 4px);
+		height: calc(var(--element-size) - 4px);
+		border-radius: calc(var(--element-size) - 4px);
+		border: 1px solid transparent;
+		transform: translateY(-50%);
+		background-color: #fff;
+		opacity: 1;
+	}
+}
+
+input[type="checkbox"] ~ .formOption__element:before {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.493049 5.95887C0.79291 6.26617 3.95149 9.27594 3.95149 9.27594C4.11221 9.43964 4.32204 9.52148 4.53187 9.52148C4.7417 9.52148 4.95227 9.43964 5.11224 9.27594C5.11224 9.27594 10.9919 2.54582 11.2918 2.23852C11.5916 1.93047 11.6125 1.37688 11.2918 1.048C10.9711 0.719123 10.5246 0.69308 10.131 1.048L4.53112 7.52886L1.65231 4.76836C1.25944 4.41344 0.811512 4.44022 0.491561 4.76836C0.17161 5.09724 0.192444 5.65083 0.493049 5.95887Z' fill='white'/%3E%3C/svg%3E");
+}
+
+input[type="radio"] ~ .formOption__element {
+	border-radius: var(--element-size);
+
+	&:before {
+		display: none;
+	}
+}
+
+input[type="checkbox"]:checked ~ .formOption__element.formOption__element--switch {
+
+	&:before {
+		left: calc(var(--element-size) + 1px);
+	}
+}
+
+input[type="radio"]:checked ~ .formOption__element {
+	border-color: $color-brand;
+	border-width: 6px;
+}
+
+input[type="checkbox"]:checked ~ .formOption__element {
+	border-color: $color-brand;
+	background-color: $color-brand;
+
+	&:before {
+		opacity: 1;
+	}
+}
+
+input[type="radio"]:disabled,
+input[type="checkbox"]:disabled {
+	& ~ .formOption__content {
+		cursor: not-allowed;
+
+		.formOption__label {
+			opacity: .6;
+		}
+	}
+
+	& ~ .formOption__element {
+		border-color: lighten($color-gray, 28);
+		background-color: lighten($color-gray, 28);
+		cursor: not-allowed;
+	}
+}
+
+input[type="checkbox"]:disabled:checked ~ .formOption__element:before {
+	opacity: .5;
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.493049 5.95887C0.79291 6.26617 3.95149 9.27594 3.95149 9.27594C4.11221 9.43964 4.32204 9.52148 4.53187 9.52148C4.7417 9.52148 4.95227 9.43964 5.11224 9.27594C5.11224 9.27594 10.9919 2.54582 11.2918 2.23852C11.5916 1.93047 11.6125 1.37688 11.2918 1.048C10.9711 0.719123 10.5246 0.69308 10.131 1.048L4.53112 7.52886L1.65231 4.76836C1.25944 4.41344 0.811512 4.44022 0.491561 4.76836C0.17161 5.09724 0.192444 5.65083 0.493049 5.95887Z' fill='black'/%3E%3C/svg%3E");
+}
+
+input[type="checkbox"]:disabled:checked ~ .formOption__element.formOption__element--switch:before {
+	opacity: .8;
+	background-image: none;
+}
+
+input[type="radio"]:disabled:checked ~ .formOption__element {
+	border-color: $color-gray;
+	background-color: $color-white;
+}
+
+.formOption.--error {
+	.formOption__element {
+		border-color: $color-danger;
+	}
+}
+
+.formSelect__value {
+	width: 100%;
+}
+
+.formSelect__custom-option {
+	width: 100%;
+}
+
+.formSelect__option-text {
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

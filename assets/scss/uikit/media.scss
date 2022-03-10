@@ -1,0 +1,21 @@
+.media {
+	display: flex;
+	align-items: flex-start;
+	width: 100%;
+}
+
+.mediaBody {
+	flex-grow: 1;
+	flex-shrink: 1;
+	//width: 1px;
+}
+
+.mediaAside {
+	display: flex;
+	flex-grow: 0;
+	flex-shrink: 0;
+}
+
+.mediaAside--round {
+	border-radius: 50%;
+}

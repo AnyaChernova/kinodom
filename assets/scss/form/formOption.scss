@@ -1,0 +1,169 @@
+.formOption {
+	align-items: center;
+
+	&:hover {
+		.formOption__element {
+			border-color: $color-brand;
+		}
+	}
+}
+
+.formOption.--tab {
+	.formOption__element {
+		width: unset;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 4px 8px;
+		height: 28px;
+		font-size: 14px;
+		border-radius: 2px;
+		background-color: $color-inactive;
+		color: $color-text-dark;
+		border: none;
+	}
+}
+
+.formOption__element {
+	border-radius: 2px;
+}
+
+.formOption__content {
+	padding-left: 18px;
+	flex-grow: 1;
+}
+
+.formOption__element {
+	flex-shrink: 0;
+}
+
+.formOption__caption {
+	font-size: 14px;
+}
+
+//radio
+.formOption.--tab {
+	input[type="radio"]:checked ~ .formOption__element {
+		&:after {
+			display: none;
+		}
+	}
+
+	input[type="radio"]:checked ~ .formOption__element {
+		background-color: $color-text-dark;
+		color: $color-white;
+
+		&:before {
+			display: none;
+		}
+	}
+}
+input[type="radio"] ~ .formOption__element {
+	width: 22px;
+	height: 22px;
+}
+
+input[type="radio"]:checked ~ .formOption__element {
+	border-color: $color-brand;
+	border-width: 1px;
+
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 3px;
+		left: 3px;
+		width: 14px;
+		height: 14px;
+		background-color: $color-brand;
+		border-radius: 50%;
+		box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+	}
+}
+
+input[type="radio"]:disabled ~ .formOption__element {
+	border-color: $color-gray-dark;
+	background-color: transparent;
+}
+
+input[type="radio"]:disabled:checked ~ .formOption__element {
+	border-color: $color-gray-dark;
+	background-color: transparent;
+
+	&:after {
+		background-color: $color-gray-mid;
+	}
+}
+
+input[type="radio"]:disabled ~ .formOption__content .formOption__label {
+	opacity: 1;
+	color: $color-gray-mid;
+}
+
+//checkbox
+.formOption.--tab {
+	input[type="checkbox"]:checked ~ .formOption__element {
+		background-color: $color-text-dark;
+		color: $color-white;
+
+		&:before {
+			display: none;
+		}
+	}
+}
+
+input[type="checkbox"]:checked ~ .formOption__element {
+	border-color: $color-border;
+	background-color: transparent;
+}
+
+input[type="checkbox"] ~ .formOption__element:before {
+	background-position: 100% 100%;
+	background-image: url("data:image/svg+xml,%3Csvg width='17' height='15' viewBox='0 0 17 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_d_6467_23248)'%3E%3Cpath d='M4 5.5L7 8.5L13 2.5' stroke='%2300CAD7' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d_6467_23248' x='0' y='0.5' width='17' height='14' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='2'/%3E%3CfeGaussianBlur stdDeviation='1'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_6467_23248'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_6467_23248' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
+}
+
+input[type="checkbox"]:disabled ~ .formOption__element {
+	border-color: $color-gray-dark;
+	background-color: $color-gray-light;
+
+	&:before {
+		background-image: url("data:image/svg+xml,%3Csvg width='17' height='14' viewBox='0 0 17 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_d_6467_5994)'%3E%3Cpath d='M4 5L7 8L13 2' stroke='%23C0C0C0' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d_6467_5994' x='0' y='0' width='17' height='14' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='2'/%3E%3CfeGaussianBlur stdDeviation='1'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_6467_5994'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_6467_5994' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
+	}
+}
+
+input[type="checkbox"]:disabled:checked ~ .formOption__element:before {
+	background-image: url("data:image/svg+xml,%3Csvg width='17' height='14' viewBox='0 0 17 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_d_6467_5994)'%3E%3Cpath d='M4 5L7 8L13 2' stroke='%23C0C0C0' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d_6467_5994' x='0' y='0' width='17' height='14' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='2'/%3E%3CfeGaussianBlur stdDeviation='1'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_6467_5994'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_6467_5994' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
+}
+
+input[type="checkbox"]:disabled ~ .formOption__content .formOption__label {
+	opacity: 1;
+	color: $color-gray-mid;
+}
+
+//switch
+input[type="checkbox"]:checked ~ .formOption__element.formOption__element--switch {
+	background-color: $color-brand;
+}
+
+input[type="checkbox"] ~ .formOption__element.formOption__element--switch {
+	width: 36px;
+	height: 16px;
+	border-color: transparent;
+	background-color: $color-border-dark;
+}
+
+input[type="checkbox"] ~ .formOption__element.formOption__element--switch {
+	&:before {
+		width: 20px;
+		height: 20px;
+		box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+		left: -2px;
+	}
+}
+
+input[type="checkbox"]:checked ~ .formOption__element.formOption__element--switch {
+	&:before {
+		left: unset;
+		right: -2px;
+	}
+}

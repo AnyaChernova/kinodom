@@ -1,0 +1,19 @@
+.floatBox {
+	width: 100%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	padding: 20px 16px;
+	box-shadow: 0 0 32px rgba(0, 0, 0, 0.25);
+	border-radius: 16px 16px 0 0;
+	background-color: $color-white;
+	z-index: 10;
+	display: none;
+}
+
+.floatBox.show {
+	display: block;
+	animation-name: slideToTop;
+	animation-duration: 0.4s;
+	animation-fill-mode: both;
+}

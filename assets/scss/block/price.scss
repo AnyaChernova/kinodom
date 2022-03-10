@@ -1,0 +1,45 @@
+.price {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 1;
+}
+
+.price--rub {
+	color: $color-gray-dark;
+	span:not(:first-child) {
+		margin-left: -3px;
+	}
+}
+
+/*! purgecss start ignore */
+.price-1 {
+	span:first-child {
+		color: $color-gold;
+	}
+}
+
+.price-2 {
+	span:first-child {
+		color: $color-gold;
+	}
+	span:nth-child(2) {
+		color: $color-gold;
+	}
+}
+
+.price-3 {
+	span:first-child {
+		color: $color-gold;
+	}
+	span:nth-child(2) {
+		color: $color-gold;
+	}
+	span:nth-child(3) {
+		color: $color-gold;
+	}
+}
+
+.price-4 {
+	color: $color-gold;
+}
+/*! purgecss end ignore */

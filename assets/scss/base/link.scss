@@ -1,0 +1,34 @@
+.link {
+	@include link;
+	font-size: inherit;
+	color: $color-brand;
+	transition: opacity .2s;
+	&:hover {
+		opacity: .5;
+	}
+	&[disabled] {
+		opacity: .4;
+		pointer-events: none;
+	}
+}
+
+.link--line {
+	&:hover {
+		opacity: 1;
+		text-decoration: underline;
+	}
+}
+
+.link--underline {
+	text-decoration: underline;
+}
+
+.link--loading {
+	background-image: linear-gradient(-45deg, $color-brand 45%, $color-gray-light 55%, $color-brand 65%);
+	background-size: 500%;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: Gradient 2s ease infinite;
+	animation-direction: normal;
+	pointer-events: none;
+}

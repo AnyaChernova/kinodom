@@ -1,0 +1,84 @@
+@mixin layout {
+	width: 100%;
+	min-width: 320px;
+	max-width: 1212px;
+	padding: 0 16px;
+	margin: 0 auto;
+	@include media(from, l) {
+		padding: 0 25px;
+	}
+	@include media(from, xl) {
+		padding: 0 36px;
+	}
+}
+
+@mixin title {
+	margin: 0;
+	font-family: $font-family-title;
+	color: $color-text-dark;
+	font-size: 48px;
+	font-weight: 600;
+	line-height: 1.2;
+	@include media(s) {
+		font-size: 24px;
+	}
+}
+
+@mixin title-l {
+	margin: 0;
+	font-family: $font-family-title;
+	color: $color-text-dark;
+	font-size: 40px;
+	font-weight: 600;
+	line-height: 1.2;
+	@include media(s) {
+		font-size: 24px;
+	}
+}
+
+@mixin title-m {
+	margin: 0;
+	font-family: $font-family-title;
+	color: $color-text-dark;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 1.2;
+	@include media(s) {
+		font-size: 20px;
+		line-height: 1.5;
+	}
+}
+
+@mixin title-s {
+	margin: 0;
+	font-family: $font-family-title;
+	color: $color-text-dark;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+@mixin title-xs {
+	margin: 0;
+	font-family: $font-family-title;
+	color: $color-text-dark;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+@mixin title-xxs {
+	margin: 0;
+	font-family: $font-family-title;
+	color: $color-text-dark;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1;
+}
+
+@mixin img-cover {
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+	object-fit: cover;
+}

@@ -1,0 +1,65 @@
+.mr-m {
+	margin-right: 16px;
+}
+
+.m\:mr-m {
+	@include media(from, m) {
+		margin-right: 16px;
+	}
+}
+
+.ml-m {
+	margin-left: 16px;
+}
+
+.mt-m {
+	margin-top: 16px;
+}
+
+.pt-m {
+	padding-top: 16px;
+}
+
+.s-ml-auto {
+	@include media(s) {
+		margin-left: auto;
+	}
+}
+
+.mt-24 {
+ margin-top: 24px;
+}
+
+.mt-auto {
+	margin-top: auto;
+}
+
+.s-mt-auto {
+	@include media(s) {
+		margin-top: auto;
+	}
+}
+
+.mw-100 {
+	max-width: 100%;
+}
+
+.hover {
+	cursor: pointer;
+}
+
+.no-events {
+	pointer-events: none;
+}
+
+.from-m\:h-full {
+	@include media(from, m) {
+		height: 100%;
+	}
+}
+
+.from-s\:d-flex {
+	@include media(from, s) {
+		display: flex;
+	}
+}

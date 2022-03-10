@@ -1,0 +1,36 @@
+.mediaBody {
+	flex-grow: unset;
+	max-width: calc(100% - 48px - 8px);
+	margin-left: 8px;
+	font-size: 14px;
+	line-height: 1.4;
+}
+
+.fz-12 .mediaBody {
+	font-size: 12px;
+}
+
+.media.--s .mediaBody {
+	max-width: calc(100% - 40px - 8px);
+}
+
+.mediaAside.mr-5 {
+	margin-right: 0;
+}
+
+.mediaBody__name {
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-height: 37px;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.fz-12 .mediaBody__name {
+	max-height: 32px;
+}
+
+.mediaBody__name.--cut {
+	max-width: 160px;
+}

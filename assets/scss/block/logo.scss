@@ -1,0 +1,11 @@
+.logo {
+	@include link;
+	width: 140px;
+	height: 25px;
+	color: $color-brand;
+	cursor: pointer;
+
+	&:hover {
+		color: $color-brand-light;
+	}
+}

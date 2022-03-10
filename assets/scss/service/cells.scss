@@ -1,0 +1,100 @@
+.cells {
+	--y-gap: 32px;
+	--x-gap: 16px;
+}
+
+.cells.cells--popup {
+	overflow-y: auto;
+	--y-gap: 0;
+	margin: 0 -16px;
+}
+
+.cells--stretch {
+	align-items: stretch;
+}
+
+.cells--stretch .cell {
+	& > .box,
+	& > .borderBox {
+		height: 100%;
+	}
+}
+
+.--gap-m {
+	--y-gap: 24px;
+	--x-gap: 16px;
+}
+
+.--gap-s {
+	--y-gap: 16px;
+	--x-gap: 16px;
+}
+
+.--gap-xs {
+	--y-gap: 10px;
+	--x-gap: 16px;
+}
+
+.--gap-list {
+	--y-gap: 12px;
+	--x-gap: 16px;
+}
+
+.--gap-pic {
+	--y-gap: 16px;
+	--x-gap: 12px;
+}
+
+.--gap-form {
+	--y-gap: 8px;
+	--x-gap: 16px;
+}
+
+.--gap-btn {
+	--y-gap: 32px;
+	--x-gap: 16px;
+}
+
+.--gap-card {
+	--y-gap: 16px;
+	--x-gap: 8px;
+}
+
+.--gap-phone {
+	--y-gap: 0;
+	--x-gap: 8px;
+}
+
+.--gap-4 {
+	--y-gap: 4px;
+	--x-gap: 4px;
+}
+
+
+@include media(s) {
+	.cells {
+		--x-gap: 12px;
+	}
+
+	.cells.cells--popup {
+		margin: 0;
+		--x-gap: 0;
+		--y-gap: 0;
+	}
+
+	.--gap-s {
+		--x-gap: 12px;
+	}
+
+	.--gap-btn {
+		--x-gap: 8px;
+	}
+
+	.--gap-card {
+		--x-gap: 0;
+	}
+
+	.--gap-phone {
+		--x-gap: 5px;
+	}
+}

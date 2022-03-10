@@ -1,0 +1,11 @@
+.rect {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.rect--border {
+	border: 1px solid $color-border;
+}

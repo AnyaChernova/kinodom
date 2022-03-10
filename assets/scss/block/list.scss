@@ -1,0 +1,32 @@
+.list {
+
+}
+
+.list--border {
+	.list__title {
+		padding-bottom: 16px;
+	}
+
+	.list__item {
+		padding: 20px 0;
+	}
+
+	.list__item,
+	.list__title {
+		border-bottom: 1px solid $color-gray-dark;
+	}
+}
+
+.list--switch {
+	.list__item {
+		padding: 10px 0;
+	}
+
+	.list__item {
+		border-bottom: 1px solid $color-border;
+	}
+
+	.list__item + .list__item {
+		margin-top: 16px;
+	}
+}

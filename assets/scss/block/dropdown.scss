@@ -1,0 +1,18 @@
+.dropdown.--custom {
+	box-shadow: 0 0 32px rgba(0, 0, 0, 0.25);
+	border-radius: 24px;
+}
+
+.dropdown.--bigRadius {
+	box-shadow: 0 0 32px rgba(0, 0, 0, 0.25);
+	border-radius: 16px;
+}
+
+@include media(s) {
+	.dropdown.--custom.fixMaxWidth {
+		max-width: 100%;
+		width: 100%;
+		border-radius: 0;
+		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+	}
+}

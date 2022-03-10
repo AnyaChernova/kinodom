@@ -1,0 +1,50 @@
+.badge {
+	--baseBgColor: #{$color-brand};
+	--baseTextColor: #{$color-white};
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: flex-start;
+	vertical-align: middle;
+	padding: 4px 12px;
+	border-radius: $border-radius;
+	background-color: var(--baseBgColor);
+	color: var(--baseTextColor);
+	font-size: 12px;
+}
+
+.badge__icon {
+	display: block;
+
+	.md-icon {
+		display: block;
+		font-size: 1.167em;
+	}
+
+	svg {
+		display: block;
+		width: 1.25em;
+		height: 1.25em;
+	}
+}
+
+.badge__icon {
+	margin-left: -4px;
+}
+
+.badge__icon + .badge__content {
+	margin-left: 8px;
+}
+
+.badge__content + .badge__icon {
+	margin-left: 8px;
+	margin-right: -4px;
+}
+
+.badge.--c-danger {
+	--baseBgColor: #{$color-danger};
+}
+
+.badge.--c-success {
+	--baseBgColor: #{$color-success};
+}

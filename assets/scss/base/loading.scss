@@ -1,0 +1,98 @@
+.loading.loading {
+	position: relative;
+	pointer-events: none;
+
+	&:before {
+		content: '';
+		display: block;
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		border: 2px solid transparent;
+		border-top: 2px solid #fff;
+		border-bottom: 2px solid #fff;
+		border-radius: 30px;
+		top: 50%;
+		left: 50%;
+		margin: -15px 0 0 -15px;
+		z-index: 30;
+		animation-name: loadingAnimate;
+		animation-timing-function: linear;
+		animation-duration: 1s;
+		animation-fill-mode: none;
+		animation-iteration-count: infinite;
+
+		//animation: loadingAnimate 1s infinite linear;
+		//animation: loadingShow 1s linear;
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background-color: #000;
+		opacity: .5;
+	}
+}
+
+.loading.loading--noBg {
+	&:after {
+		display: none;
+	}
+}
+
+.loading.loading--dark {
+	&:before {
+		border-top: 2px solid $color-text;
+		border-bottom: 2px solid $color-text;
+	}
+
+	&:after {
+		background-color: #fff;
+	}
+}
+
+.loading--lazy {
+	&:before {
+		content: '';
+		animation-name: loadingShow, loadingAnimate;
+		animation-timing-function: ease-in-out, linear;
+		animation-duration: 2s, 1s;
+		animation-fill-mode: forwards, none;
+		animation-iteration-count: 1, infinite;
+	}
+}
+
+.loading-text {
+	background-image: linear-gradient(-45deg, $color-text 45%, $color-gray-light 55%, $color-text 65%);
+	background-size: 500%;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: Gradient 4s ease infinite;
+	animation-direction: normal;
+}
+
+.loading-text-white {
+	background-image: linear-gradient(-45deg, #fff 45%, rgba(#fff, .3) 55%, #fff 65%);
+	background-size: 500%;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: Gradient 4s ease infinite;
+	animation-direction: normal;
+}
+
+.spinner-svg {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 0;
+
+	svg {
+		//stroke-dasharray: 7 70;
+		transform: rotateZ(0deg);
+		animation: spinner-line 1.5s linear infinite, spinner-rotate 1.5s linear infinite;
+	}
+}

@@ -1,0 +1,36 @@
+.menuMobile {
+	position: fixed;
+	left: 0;
+	top: 64px;
+	width: 100%;
+	max-width: 400px;
+	padding: 0 16px 24px 20px;
+	background-color: $color-white;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+	z-index: 110;
+
+	.nav {
+		display: block;
+	}
+
+	.nav__item {
+		display: block;
+		padding: 0;
+	}
+
+	.nav__link {
+		display: block;
+		padding: 16px 0;
+	}
+}
+
+.menuMobile__footer {
+	margin-top: 16px;
+}
+
+@include media(s) {
+	.menuMobile {
+		top: 48px;
+		max-width: 100%;
+	}
+}

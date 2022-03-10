@@ -1,0 +1,59 @@
+.text-brand {
+	color: $color-text-brand;
+}
+
+.text-dark {
+	color: $color-text-dark;
+}
+
+.text-white {
+	color: $color-white;
+}
+
+.text-danger {
+	color: $color-danger;
+}
+
+.text-disable {
+	color: $color-gray-mid;
+}
+
+.text-label {
+	color: $color-label;
+}
+
+.text-upper {
+	text-transform: uppercase;
+}
+
+.text-title {
+	font-family: $font-family-title;
+}
+
+.text-icon {
+	svg {
+		margin-top: -1px;
+	}
+}
+
+.text-l {
+	font-size: 18px;
+	line-height: 1.6;
+}
+
+.text-mid {
+	font-weight: 500;
+}
+
+.text-underline {
+	text-decoration: underline;
+}
+
+.text-loader {
+	background-image: linear-gradient(-45deg, $color-text 45%, $color-gray-light 55%, $color-text 65%);
+	background-size: 500%;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: Gradient 4s ease infinite;
+	animation-direction: normal;
+}

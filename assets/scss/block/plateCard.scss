@@ -1,0 +1,152 @@
+.plateCard {
+	display: block;
+	width: 100%;
+	position: relative;
+	background-color: $color-white;
+	padding: 32px 64px 24px 46px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+	border: none;
+	border-radius: $border-radius;
+	text-decoration: none;
+
+	.formField + .formField {
+		margin-top: 6px;
+	}
+}
+
+.items-stretch .plateCard {
+	height: 100%;
+}
+
+button.plateCard {
+	cursor: pointer;
+
+	&:hover {
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+	}
+}
+
+a.plateCard {
+	cursor: pointer;
+
+	&:hover {
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+	}
+}
+
+/*! purgecss start ignore */
+.plateCard.sortable-ghost {
+	box-shadow: 0 8px 48px rgba(0, 0, 0, 0.15);
+}
+/*! purgecss end ignore */
+
+.plateCard--m {
+	padding: 24px 32px;
+}
+
+.plateCard--s {
+	padding: 16px;
+	border-radius: 8px;
+}
+
+.plateCard--gray {
+	background-color: $color-plate;
+}
+
+.plateCard--simple {
+	padding: 0 64px 0 0;
+	box-shadow: none;
+	border-radius: 0;
+
+	.plateCard__addon {
+		top: 0;
+		right: 0;
+	}
+}
+
+.plateCard__addon {
+	position: absolute;
+	top: 24px;
+	right: 24px;
+	z-index: 1;
+}
+
+.plateCard__mover {
+	position: absolute;
+	top: 24px;
+	left: 24px;
+}
+
+.plateCard__inner {
+	display: flex;
+}
+
+.plateCard__number {
+	width: 38px;
+	flex-shrink: 0;
+	color: $color-gray;
+	font-size: 14px;
+}
+
+.plateCard__content {
+	flex-grow: 1;
+}
+
+.plateCard__pic {
+	margin-right: 32px;
+	flex-shrink: 0;
+}
+
+.plateCard + .plateCard {
+	margin-top: 24px;
+}
+
+@include media(s) {
+	.plateCard {
+		padding: 20px 48px 8px 30px;
+	}
+
+	.plateCard--m {
+		padding: 24px 32px;
+	}
+
+	.plateCard--s {
+		padding: 16px;
+	}
+
+	.plateCard--simple {
+		padding: 0;
+
+		.plateCard__addon {
+			top: 36px;
+			right: 8px;
+		}
+	}
+
+	.plateCard__addon {
+		top: 8px;
+		right: 8px;
+	}
+
+	.plateCard__mover {
+		top: 8px;
+		left: 8px;
+	}
+
+	.plateCard__inner {
+		display: block;
+	}
+
+	.plateCard__number {
+		width: 100%;
+		margin-bottom: 8px;
+	}
+
+	.plateCard__pic {
+		margin-right: 0;
+		width: 100%;
+		height: 200px;
+		margin-bottom: 8px;
+	}
+
+}

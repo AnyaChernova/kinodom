@@ -1,0 +1,59 @@
+{
+	"name": "kinodom",
+	"version": "1.0.0",
+	"description": "kinodom",
+	"author": "Anna Chernova",
+	"private": true,
+	"scripts": {
+		"dev:local": "env-cmd -e local nuxt",
+		"dev:test": "env-cmd -e test nuxt",
+		"export": "env-cmd -e local nuxt export",
+		"serve": "env-cmd -e local nuxt serve",
+		"start": "nuxt start",
+		"pm2-server-stage": "pm2 start ecosystem.config.js --only KINODOM:STAGE",
+		"pm2-server-prod": "pm2 start ecosystem.config.js --only KINODOM:PROD",
+		"build:analyze": "env-cmd -e local nuxt build --analyze",
+		"build:test": "env-cmd -e test nuxt build",
+		"build:stage": "env-cmd -e stage nuxt build",
+		"build:prod": "env-cmd -e production nuxt build",
+		"start:test": "env-cmd -e test npm run pm2-server",
+		"start:stage": "env-cmd -e stage npm run pm2-server-stage",
+		"start:prod": "env-cmd -e production npm run pm2-server-prod"
+	},
+	"dependencies": {
+		"@nuxtjs/auth": "4.9.1",
+		"@nuxtjs/axios": "5.13.6",
+		"@nuxtjs/pwa": "3.3.5",
+		"@nuxtjs/svg-sprite": "0.5.2",
+		"@popperjs/core": "2.9.2",
+		"autosize": "4.0.2",
+		"core-js": "3.10.1",
+		"date-fns": "2.23.0",
+		"env-cmd": "10.1.0",
+		"imask": "6.0.5",
+		"normalize.css": "8.0.1",
+		"nuxt": "2.15.8",
+		"nuxt-lazy-load": "1.2.9",
+		"nuxt-purgecss": "1.0.0",
+		"pickmeup": "^3.2.1",
+		"portal-vue": "2.1.7",
+		"request": "2.88.2",
+		"swiper": "5.4.5",
+		"vue-awesome-swiper": "4.1.1",
+		"vue-modal-dialogs": "3.0.0",
+		"vue-slider-component": "3.2.15",
+		"vue-snotify": "3.2.1",
+		"vuedraggable": "2.24.3"
+	},
+	"devDependencies": {
+		"@nuxt/types": "2.15.7",
+		"import-glob-loader": "1.1.0",
+		"sass": "1.32.13",
+		"sass-loader": "10.2.0"
+	},
+	"browserslist": [
+		"> 2%",
+		"last 2 versions",
+		"IE > 10"
+	]
+}

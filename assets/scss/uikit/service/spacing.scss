@@ -1,0 +1,134 @@
+// generate padding, margin
+$prefixList: (
+	'': '',
+	t: '-top',
+	r: '-right',
+	b: '-bottom',
+	l: '-left',
+);
+
+@mixin setSizeClass($value: false, $prefixKey: false, $prefixValue: false, $mediaKey:false) {
+	$mediaPrefix: if($mediaKey == false, '', ($mediaKey + '\\:'));
+	@if ($prefixKey and $prefixValue) {
+		.#{$mediaPrefix}m#{$prefixKey}-#{$value} {
+			margin#{$prefixValue}: $value+px;
+		}
+		.#{$mediaPrefix}p#{$prefixKey}-#{$value} {
+			padding#{$prefixValue}: $value+px;
+		}
+		@if ($value > 0) {
+			.#{$mediaPrefix}-m#{$prefixKey}-#{$value} {
+				margin#{$prefixValue}: -$value+px;
+			}
+		}
+	} @else {
+		.#{$mediaPrefix}mx-#{$value} {
+			margin-left: $value+px;
+			margin-right: $value+px;
+		}
+		.#{$mediaPrefix}my-#{$value} {
+			margin-top: $value+px;
+			margin-bottom: $value+px;
+		}
+		@if ($value > 0) {
+			.#{$mediaPrefix}-mx-#{$value} {
+				margin-left: -$value+px;
+				margin-right: -$value+px;
+			}
+			.#{$mediaPrefix}-my-#{$value} {
+				margin-top: -$value+px;
+				margin-bottom: -$value+px;
+			}
+		}
+		.#{$mediaPrefix}px-#{$value} {
+			padding-left: $value+px;
+			padding-right: $value+px;
+		}
+		.#{$mediaPrefix}py-#{$value} {
+			padding-top: $value+px;
+			padding-bottom: $value+px;
+		}
+	}
+}
+
+.m-auto {
+	margin: auto;
+}
+
+.mx-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.my-auto {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+// auto
+@each $prefixKey, $prefixValue in $prefixList {
+	.m#{$prefixKey}-a {
+		margin#{$prefixValue}: auto;
+	}
+}
+
+// from 0px to 9px
+@for $index from 0 through 9 {
+	$value: $index;
+	@include setSizeClass($value);
+	@each $prefixKey, $prefixValue in $prefixList {
+		@include setSizeClass($value, $prefixKey, $prefixValue);
+	}
+}
+
+// from 10px to 50px
+@for $index from 2 through 10 {
+	$value: $index * 5;
+	@include setSizeClass($value);
+	@each $prefixKey, $prefixValue in $prefixList {
+		@include setSizeClass($value, $prefixKey, $prefixValue);
+	}
+}
+
+@each $key, $val in $breakpoints-map {
+	@include media($key) {
+		.#{$key}\:m-auto {
+			margin: auto;
+		}
+
+		.#{$key}\:mx-auto {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.#{$key}\:my-auto {
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+
+		// auto
+		@each $prefixKey, $prefixValue in $prefixList {
+			.#{$key}\:m#{$prefixKey}-a {
+				margin#{$prefixValue}: auto;
+			}
+		}
+
+		// from 0px to 9px
+		@for $index from 0 through 9 {
+			$value: $index;
+			@include setSizeClass($value, false, false, $key);
+			@each $prefixKey, $prefixValue in $prefixList {
+				@include setSizeClass($value, $prefixKey, $prefixValue, $key);
+			}
+		}
+
+		// from 10px to 50px
+		@for $index from 2 through 10 {
+			$value: $index * 5;
+			@include setSizeClass($value, false, false, $key);
+			@each $prefixKey, $prefixValue in $prefixList {
+				@include setSizeClass($value, $prefixKey, $prefixValue, $key);
+			}
+		}
+	}
+}

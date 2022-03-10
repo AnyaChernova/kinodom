@@ -1,0 +1,36 @@
+._Dropdown {
+	pointer-events: none;
+	visibility: hidden;
+	display: none;
+}
+
+.dropdown {
+	display: block;
+	position: absolute;
+	z-index: 10000; // Для корректного отображения в попапах (возможно спорное решение)
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+	overflow: hidden;
+	opacity: 0;
+	pointer-events: none;
+	visibility: hidden;
+}
+
+.dropdown.fixMaxWidth {
+	max-width: 350px;
+}
+
+.dropdown.isActive {
+	opacity: 1;
+	pointer-events: auto;
+	visibility: visible;
+}
+
+.dropdown[data-popper-reference-hidden] {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+}

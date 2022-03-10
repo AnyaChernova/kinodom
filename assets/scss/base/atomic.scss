@@ -1,0 +1,45 @@
+.two-lines {
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-height: 48px;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.text-ellipsis {
+	text-overflow: ellipsis;
+	max-width: 100%;
+	overflow: hidden;
+}
+
+.ml-auto {
+	margin-left: auto;
+}
+
+.no-visible {
+	opacity: 0;
+}
+
+.-rotate-180 {
+	transform: rotate(-180deg);
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+	opacity: 0;
+}
+
+@include media(xs) {
+	.xs-full {
+		width: 100%;
+	}
+}

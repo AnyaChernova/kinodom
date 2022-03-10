@@ -1,0 +1,35 @@
+/*! purgecss start ignore */
+.range-slider {
+	padding: 16px 12px 0;
+
+	.vue-slider-rail {
+		border-radius: 2px;
+	}
+
+	.vue-slider-process {
+		background-color: $color-brand;
+		border-radius: 2px;
+	}
+
+	.vue-slider-dot-handle {
+		background-color: $color-brand;
+		box-shadow: none;
+	}
+
+	.vue-slider-dot-tooltip-top {
+		top: 0;
+	}
+
+	.vue-slider-dot-tooltip-inner {
+		font-size: 12px;
+		background-color: transparent;
+		border: none;
+		color: $color-form;
+
+		&:after {
+			display: none;
+		}
+	}
+
+}
+/*! purgecss end ignore */

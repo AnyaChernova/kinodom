@@ -1,0 +1,561 @@
+.table {
+	text-align: left;
+}
+
+.layout.--m .table {
+	width: 730px;
+}
+
+.layout.--l {
+	.table {
+		width: 800px;
+	}
+
+	.table.--order-services {
+		width: 100%;
+	}
+}
+
+.table__head {
+	display: flex;
+	align-items: center;
+	color: $color-gray;
+	text-transform: uppercase;
+	font-size: 13px;
+
+	.table__cell {
+		padding: 0 12px 15px;
+	}
+}
+
+.table__footer {
+	display: flex;
+	align-items: center;
+}
+
+.table__row {
+	display: flex;
+	align-items: center;
+	border-top: 1px solid $color-border;
+}
+
+.table__row.--border {
+	border-bottom: 1px solid $color-border;
+}
+
+a.table__row {
+	text-decoration: none;
+	color: $color-text;
+	position: relative;
+
+	&:hover {
+		background-color: $color-back;
+		border-top-color: transparent;
+	}
+}
+
+a.table__row:hover + a.table__row {
+	border-top-color: transparent;
+}
+
+.table__row {
+	&:last-child .table__cell {
+		border-bottom: none;
+	}
+}
+
+.table__cell {
+	position: relative;
+	padding: 17px 12px;
+	flex-shrink: 0;
+
+	&:first-child {
+		padding-left: 24px;
+	}
+
+	&:last-child {
+		padding-right: 0;
+	}
+
+	.btn.--dots {
+		height: 100%;
+	}
+}
+
+.table__cell.--dots {
+	align-self: stretch;
+
+	.--dots {
+		height: 100%;
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: -10px;
+			right: 0;
+			left: -10px;
+			bottom: -10px;
+		}
+
+	}
+}
+
+.table__cell .text-cut {
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-height: 40px;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.tableWrap {
+	width: 100%;
+	overflow: auto;
+	padding-bottom: 20px;
+}
+
+//custom tables
+.table.--dashboard {
+	.table__cell {
+		&:first-child {
+			width: 180px;
+		}
+
+		&:nth-child(2) {
+			width: 235px;
+		}
+
+		&:nth-child(3) {
+			flex-grow: 1;
+			flex-shrink: 1;
+		}
+
+		&:last-child {
+			width: 60px;
+			text-align: right;
+			padding-right: 5px;
+		}
+	}
+}
+
+.table.--visits {
+	.table__cell {
+		padding-left: 6px;
+		padding-right: 6px;
+
+		&:first-child {
+			width: 130px;
+			padding-left: 24px;
+		}
+
+		&:nth-child(2) {
+			width: 238px;
+		}
+
+		&:nth-child(3) {
+			flex-grow: 1;
+			flex-shrink: 1;
+		}
+
+		&:nth-child(4) {
+			width: 80px;
+			text-align: right;
+		}
+
+		&:last-child {
+			width: 65px;
+			text-align: right;
+			padding-right: 24px;
+		}
+	}
+
+	.badge {
+		max-width: 180px;
+	}
+}
+
+.table.--order {
+	.table__cell {
+		&:first-child {
+			width: 155px;
+		}
+
+		&:nth-child(2) {
+			flex-grow: 1;
+			flex-shrink: 1;
+		}
+
+		&:nth-child(3) {
+			width: 235px;
+		}
+
+		&:last-child {
+			width: 150px;
+			text-align: right;
+		}
+	}
+}
+
+.table.--services {
+	.table__row {
+		border-top: none;
+	}
+
+	.table__head {
+		border-bottom: 1px solid $color-border;
+		padding-bottom: 10px;
+		margin-bottom: 25px;
+	}
+
+	.table__footer {
+		padding-bottom: 5px;
+		padding-top: 10px;
+		border-top: 1px solid $color-border;
+		margin: 5px 25px 0;
+		align-items: flex-start;
+
+		.table__cell {
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+	}
+
+	.table__footer.--border-dark {
+		border-top: 1px solid rgba($color-text-dark, 0.6);
+	}
+
+	.table__cell {
+		padding-top: 4px;
+		padding-bottom: 4px;
+
+		&:first-child {
+			flex-grow: 1;
+			flex-shrink: 1;
+		}
+
+		&:nth-child(2) {
+			width: 155px;
+			text-align: right;
+		}
+
+		&:last-child {
+			width: 145px;
+			text-align: right;
+			padding-right: 25px;
+		}
+	}
+}
+
+.table.--services.--m {
+	.table__cell {
+		padding-top: 7px;
+		padding-bottom: 7px;
+
+		&:first-child {
+			padding-left: 0;
+		}
+	}
+
+	.table__head {
+		margin-bottom: 0;
+	}
+
+	.table__footer {
+		margin: 0;
+		padding: 5px 20px;
+	}
+
+	.table__footer.--indent {
+		padding-top: 26px;
+	}
+}
+
+.table.--services.--l {
+	.table__row {
+		border-top: 1px solid $color-border;
+	}
+
+	.table__footer {
+		margin: 0;
+		padding: 0;
+
+		.table__cell {
+			&:first-child {
+				padding-left: 0;
+			}
+		}
+	}
+
+	.table__cell {
+		padding-top: 12px;
+		padding-bottom: 12px;
+
+		&:first-child {
+			flex-grow: 1;
+			flex-shrink: 1;
+			padding-left: 15px;
+		}
+
+		&:last-child {
+			width: 145px;
+			text-align: right;
+			padding-right: 25px;
+		}
+	}
+}
+
+.table.--orders {
+	.table__cell {
+		&:first-child {
+			width: 160px;
+			padding-left: 0;
+		}
+
+		&:nth-child(2) {
+			flex-grow: 1;
+			flex-shrink: 1;
+		}
+
+		&:nth-child(3) {
+			width: 230px;
+		}
+
+		&:nth-child(4) {
+			width: 95px;
+			text-align: right;
+		}
+
+		&:last-child {
+			width: 55px;
+			text-align: right;
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
+
+	.badge {
+		max-width: 180px;
+	}
+}
+
+.table.--visits-l {
+	.table__cell {
+		padding-left: 6px;
+		padding-right: 6px;
+
+		&:first-child {
+			width: 35px;
+			padding-left: 0;
+		}
+
+		&:nth-child(2) {
+			width: 135px;
+			padding-left: 0;
+		}
+
+		&:nth-child(3) {
+			width: 160px;
+		}
+
+		&:nth-child(4) {
+			width: 190px;
+		}
+
+		&:nth-child(5) {
+			width: 115px;
+			flex-grow: 1;
+			flex-shrink: 1;
+			text-align: right;
+			padding-right: 0;
+		}
+
+		&:nth-child(6) {
+			flex-grow: 1;
+			flex-shrink: 1;
+			text-align: right;
+		}
+
+		&:last-child {
+			width: 65px;
+			text-align: right;
+			padding-right: 35px;
+		}
+	}
+
+	.badge {
+		max-width: 180px;
+	}
+}
+
+.table.--payments {
+	.table__cell {
+		&:first-child {
+			width: 60px;
+			padding-left: 0;
+		}
+
+		&:nth-child(2) {
+			width: 110px;
+		}
+
+		&:nth-child(3) {
+			width: 180px;
+		}
+
+		&:nth-child(4) {
+			flex-grow: 1;
+			flex-shrink: 1;
+		}
+
+		&:last-child {
+			width: 130px;
+			text-align: right;
+			padding-right: 30px;
+		}
+	}
+}
+
+.table.--order-services {
+	.table__head + .table__row {
+		border-top-width: 2px;
+	}
+
+	.table__cell {
+		padding-left: 6px;
+		padding-right: 6px;
+
+		&:first-child {
+			flex-grow: 1;
+			flex-shrink: 1;
+			padding-left: 0;
+		}
+
+		&:nth-child(2) {
+			width: 100px;
+			padding-left: 0;
+			text-align: right;
+		}
+
+		&:nth-child(3) {
+			width: 125px;
+			text-align: right;
+		}
+
+		&:last-child {
+			width: 115px;
+			text-align: right;
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
+}
+
+.table.--user {
+	.table__head {
+		.table__cell {
+			padding-bottom: 15px;
+		}
+	}
+
+	.table__cell {
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+		&:first-child {
+			flex-grow: 1;
+			flex-shrink: 1;
+			padding-left: 20px;
+		}
+
+		&:nth-child(2) {
+			width: 150px;
+		}
+
+		&:last-child {
+			width: 150px;
+			padding-right: 20px;
+		}
+	}
+}
+
+.table.--credit {
+	.table__row {
+		align-items: flex-start;
+	}
+
+	.table__cell {
+		&:first-child {
+			flex-grow: 1;
+			flex-shrink: 1;
+		}
+
+		&:nth-child(2) {
+			width: 100px;
+			text-align: right;
+		}
+
+		&:last-child {
+			width: 125px;
+			text-align: right;
+			padding-right: 0;
+		}
+	}
+}
+
+.table.--loyalty {
+	.table__cell {
+		&:first-child {
+			width: 125px;
+			padding-left: 35px;
+		}
+
+		&:nth-child(2) {
+			width: 158px;
+		}
+
+		&:nth-child(3) {
+			width: 118px;
+		}
+
+		&:nth-child(4) {
+			flex-grow: 1;
+			flex-shrink: 1;
+		}
+
+		&:last-child {
+			width: 146px;
+			text-align: right;
+			padding-right: 32px;
+		}
+	}
+}
+
+.table.--finance {
+	.table__cell {
+		&:first-child {
+			width: 140px;
+			padding-left: 17px;
+		}
+
+		&:nth-child(2) {
+			width: 190px;
+		}
+
+		&:nth-child(3) {
+			flex-grow: 1;
+			flex-shrink: 1;
+		}
+
+		&:last-child {
+			width: 146px;
+			text-align: right;
+			padding-right: 25px;
+		}
+	}
+}

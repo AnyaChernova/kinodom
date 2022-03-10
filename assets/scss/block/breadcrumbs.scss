@@ -1,0 +1,11 @@
+.breadcrumbs {
+	padding: 32px 0 8px;
+	display: flex;
+	align-items: center;
+	color: $color-brand;
+
+	.link {
+		font-size: 18px;
+		color: $color-brand;
+	}
+}

@@ -1,0 +1,234 @@
+.typo {
+	color: $color-text;
+	font-family: $font-family;
+	font-size: $font-size;
+	font-weight: 400;
+	line-height: $line-height;
+	//white-space: pre-wrap;
+	word-wrap: break-word;
+
+	* {
+		margin: 0 0 25px;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-weight: 600;
+		font-family: $font-family;
+		margin: 50px 0 15px;
+		line-height: 1.4;
+		color: $color-text-dark;
+	}
+
+	a {
+		@include link;
+		margin: 0;
+	}
+
+	h1, h2 {
+		font-size: 36px;
+	}
+
+	h3 {
+		font-size: 24px;
+	}
+
+	h4 {
+		font-size: 18px;
+	}
+
+	h5 {
+		font-size: 16px;
+	}
+
+	h6 {
+		font-size: 16px;
+	}
+
+	p {
+		font-size: 16px;
+	}
+
+	span {
+		font-size: 16px;
+	}
+
+	img {
+		display: block;
+		max-width: 100%;
+		vertical-align: middle;
+		overflow: hidden;
+	}
+
+	img:not(:first-child) {
+		margin-top: 20px;
+	}
+
+	blockquote {
+		padding: 10px 20px;
+		display: inline-block;
+		font-weight: 400;
+		border: 0;
+		position: relative;
+
+		&:after,
+		&:before {
+			font-size: 25px;
+			position: absolute;
+			z-index: 1;
+		}
+
+		&:before {
+			content: "“";
+			top: -3px;
+			left: 5px;
+		}
+
+		&:after {
+			content: "„";
+			bottom: 0;
+			right: 5px;
+		}
+	}
+
+	ul, ol {
+		padding: 0;
+
+		ul, ol {
+			padding-left: 20px;
+		}
+	}
+
+	li {
+		margin-bottom: 8px;
+		display: block;
+
+		&:before {
+			content: "";
+			display: inline-block;
+			vertical-align: baseline;
+		}
+	}
+
+	// dot
+	ul {
+		& > li {
+			&:before {
+				vertical-align: middle;
+				margin-right: 16px;
+				width: 6px;
+				height: 6px;
+				margin-top: -2px;
+				border-radius: 4px;
+				background-color: #000 !important;
+			}
+		}
+	}
+
+	// number
+	ol {
+		counter-reset: a;
+
+		& > li {
+			&:before {
+				min-width: 14px;
+				counter-increment: a;
+				content: counters(a, '.') '.';
+				margin-right: 8px;
+			}
+		}
+	}
+
+	small {
+		color: #9e9c9c;
+		font-size: 14px;
+	}
+
+	@include media(s) {
+		blockquote {
+			font-size: 18px;
+			padding-left: 15px;
+
+			&:after,
+			&:before {
+				font-size: 48px;
+			}
+
+			&:before {
+				margin-left: -22px;
+			}
+
+			&:after {
+				margin-left: 8px;
+			}
+		}
+	}
+	@include media(xs) {
+		* {
+			margin: 0 0 12px;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		img:not(:first-child) {
+			margin-top: 12px;
+		}
+		h1, h2 {
+			font-size: 22px;
+		}
+		h3 {
+			font-size: 20px;
+		}
+		h4 {
+			font-size: 18px;
+		}
+		h5, h6 {
+			font-size: 16px;
+		}
+	}
+}
+
+.text-gray {
+	.typo {
+		color: $color-gray;
+	}
+}
+
+/*! purgecss start ignore */
+.videoOuterWrap {
+	width: 100%;
+}
+
+.videoInnerWrap {
+	height: 0;
+	padding-bottom: 56.25%;
+	position: relative;
+
+	iframe,
+	video {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+/*! purgecss end ignore */

@@ -1,0 +1,83 @@
+.formField {
+	display: block;
+}
+
+.formField__label,
+.formField__control,
+.formField__caption,
+.formField__error {
+	display: block;
+}
+
+.formField__label {
+	display: block;
+	margin-bottom: 10px;
+	font-size: $font-size-form;
+	color: $color-text;
+}
+
+.formField__caption {
+	display: block;
+	min-height: 20px;
+	padding-top: 4px;
+	font-size: 12px;
+	color: $color-gray;
+}
+
+.formField__errorBox {
+	min-height: 20px;
+	padding-top: 4px;
+	margin-bottom: -22px;
+	font-size: 12px;
+}
+
+.formField__errorText {
+	min-height: 18px;
+	padding-bottom: 2px;
+	color: $color-danger;
+}
+
+.formOption .formField__errorBox {
+	min-height: 18px;
+	padding-top: 0;
+	margin-bottom: -18px;
+}
+
+.formField__control {
+}
+
+.formField.--error {
+	.formControl {
+		border-color: $color-danger;
+	}
+}
+
+@keyframes onAutoFillStart {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes onAutoFillCancel {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+input:-webkit-autofill {
+	// Expose a hook for JavaScript when auto fill is shown.
+	// JavaScript can capture 'animationstart' events
+	animation-name: onAutoFillStart;
+}
+
+input:not(:-webkit-autofill) {
+	// Expose a hook for JS onAutoFillCancel
+	// JavaScript can capture 'animationstart' events
+	animation-name: onAutoFillCancel;
+}

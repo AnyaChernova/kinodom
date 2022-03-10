@@ -1,0 +1,32 @@
+.userDropdown {
+	width: 100%;
+	padding: 14px 16px 14px;
+
+	.user__pic {
+		margin-bottom: 20px;
+	}
+}
+
+.userDropdown__item {
+	padding: 12px 0;
+}
+
+@include media(s) {
+	.userDropdown .user {
+		display: flex;
+		align-items: center;
+
+		.user__content {
+			margin-left: 16px;
+		}
+
+		.user__pic {
+			margin-bottom: 0;
+		}
+
+		.avatar.--l {
+			width: 64px;
+			height: 64px;
+		}
+	}
+}

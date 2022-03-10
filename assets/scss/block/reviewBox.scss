@@ -1,0 +1,38 @@
+.reviewBox {
+	background: $color-plate;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 16px;
+	padding: 24px;
+	color: $color-gray;
+}
+
+.reviewBox__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 24px;
+
+	.avatar,
+	.title-s {
+		color: $color-gray;
+	}
+}
+
+.reviewBox__content.cut {
+	margin-top: 8px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 2;
+	max-height: 58px;
+}
+
+.reviewBox__footer {
+	margin-top: 10px;
+	text-align: right;
+}
+
+.reviewBox + .reviewBox {
+	margin-top: 32px;
+}

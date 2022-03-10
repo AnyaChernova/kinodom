@@ -1,0 +1,243 @@
+.formField {
+
+}
+
+.formField__caption {
+	font-size: 12px;
+	color: $color-gray-dark;
+	padding-top: 10px;
+	@include media(s) {
+		padding-top: 5px;
+	}
+}
+
+.formField.--float {
+	position: relative;
+
+	.formField__label {
+		position: absolute;
+		top: 23px;
+		left: 0;
+		margin: 0;
+		font-size: 18px;
+		line-height: 1;
+		color: $color-label;
+		transition: transform 0.2s, font-size 0.2s;
+		transition-delay: .15s;
+		z-index: 5;
+		width: calc(100% - 20px);
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		padding-left: 8px;
+		text-align: left;
+		cursor: text;
+	}
+
+	.formSelect .formField__label {
+		cursor: pointer;
+	}
+}
+
+.formField.--float.active {
+	.formField__label {
+		transform:translateY(-16px);
+		font-size: 12px;
+		transition-delay: 0s;
+	}
+}
+
+.formField.--date {
+	.formArea__after-inner ~ .formControl {
+		padding-right: 20px;
+	}
+
+	.formArea__after-inner {
+		right: 0;
+		color: $color-form;
+	}
+}
+
+.formField.--date.--focus {
+	.formArea__after-inner {
+		color: $color-brand;
+	}
+}
+
+.formField.--password {
+	.formField__label {
+		width: calc(100% - 80px);
+	}
+
+	.formFieldError {
+		right: 50px;
+		z-index: 12;
+	}
+
+	.formControl {
+		padding-right: 80px;
+	}
+}
+
+.formField.--cut {
+	.formArea__after-inner {
+		bottom: 10px;
+		top: unset;
+		transform: none;
+	}
+
+	.formControl {
+		padding-bottom: 30px;
+	}
+}
+
+.formField.--after {
+	.formField__label {
+		width: calc(100% - 110px);
+	}
+
+	.formControl {
+		padding-right: 110px;
+	}
+
+	.formArea__after-inner {
+		pointer-events: unset;
+	}
+}
+
+.formField.--searchFilter {
+	.formControl {
+		padding-left: 26px;
+
+		&::placeholder {
+			font-size: 14px;
+			opacity: 1;
+			color: $color-label;
+		}
+	}
+
+	.formArea__before-inner {
+		left: 0;
+		color: $color-label;
+		margin-top: -2px;
+	}
+}
+
+.formField.--searchPanel {
+	display: inline-block;
+
+	.formArea__main {
+		min-height: 40px;
+		padding: 0;
+	}
+
+	.formControl {
+		min-height: 40px;
+		height: 40px;
+		padding: 0;
+		border: none;
+		box-shadow: none;
+		border-radius: 0;
+	}
+
+	.formArea__before-inner {
+		font-size: 0;
+		left: 0;
+	}
+
+	.formArea__after-inner {
+		font-size: 0;
+		right: 0;
+	}
+
+	.formArea__before-inner ~ .formControl {
+		padding-left: 20px;
+	}
+
+	.formArea__after-inner ~ .formControl {
+		padding-right: 20px;
+	}
+
+	.formSelect__selected {
+		font-size: 14px;
+		@include media(s) {
+			display: none;
+		}
+	}
+}
+
+.formField.--search {
+	cursor: text;
+	.formField,
+	.formSelect,
+	.formField__label {
+		cursor: text;
+	}
+
+	.formSelect .formField__label {
+		cursor: text;
+	}
+
+	.formSelect__selected {
+		white-space: nowrap;
+		max-width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.formSelect__search .formField.--float.active .formField__label {
+		transform: translateY(-15px);
+	}
+}
+
+.formField.--filter {
+	.formArea__main {
+		min-height: unset;
+		padding-bottom: 0;
+	}
+
+	.formSelect {
+		min-height: 28px;
+		font-size: 16px;
+		padding: 0;
+		border-bottom: none;
+	}
+
+	.formField__placeholder {
+		font-size: 14px;
+	}
+}
+
+.formField.--filter.--search {
+	cursor: pointer;
+	.formSelect {
+		cursor: pointer;
+	}
+}
+
+.formField.--error {
+	.formControl {
+		background-color: $color-white;
+	}
+}
+
+.formFieldPassword {
+	position: relative;
+}
+
+.formFieldPassword__btn {
+	position: absolute;
+	height: calc(100% - 2px);
+	width: 20px;
+	right: 0;
+	top: 1px;
+	z-index: 10;
+
+	&:not(.--loading):disabled {
+		background-color: transparent;
+	}
+}
+
+.formFieldPassword__btn.btn {
+	color: $color-form;
+}

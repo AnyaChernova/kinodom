@@ -1,0 +1,70 @@
+// w-1/12 w-1/5 w-full w-auto
+// xs:w-1/12
+$columns: 5, 12;
+
+.w-auto {
+	width: auto;
+}
+
+.w-screen {
+	width: 100vw;
+}
+
+.w-full {
+	width: 100%;
+}
+
+.w-0 {
+	width: 0;
+}
+
+.w-1px {
+	width: 1px;
+}
+
+.mw-full {
+	max-width: 100%;
+}
+
+.h-full {
+	height: 100%;
+}
+
+//w-[size]/[col]
+@each $column in $columns {
+	@for $i from 0 through $column {
+		.w-#{$i}\/#{$column} {
+			width: 100%/$column * $i;
+		}
+	}
+}
+
+// [media]:w-[size]/[col]
+@each $key, $val in $breakpoints-map {
+	@include media($key) {
+		.#{$key}\:w-auto {
+			width: auto;
+		}
+		.#{$key}\:w-screen {
+			width: 100vw;
+		}
+		.#{$key}\:w-full {
+			width: 100%;
+		}
+		.#{$key}\:w-0 {
+			width: 0%;
+		}
+		.#{$key}\:w-1px {
+			width: 1px;
+		}
+		@each $column in $columns {
+			@for $i from 0 through $column {
+				.#{$key}\:w-#{$i}\/#{$column} {
+					width: 100%/$column * $i;
+				}
+			}
+		}
+	}
+}
+
+

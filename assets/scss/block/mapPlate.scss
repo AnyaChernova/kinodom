@@ -1,0 +1,26 @@
+.mapPlate {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	width: 100%;
+	min-height: 64px;
+	padding: 8px 16px 8px 80px;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 8px;
+	font-size: 18px;
+	color: $color-white;
+
+	.spinner-svg {
+		margin-left: -64px;
+	}
+}
+
+.mapPlate__icon {
+	position: absolute;
+	left: 16px;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}

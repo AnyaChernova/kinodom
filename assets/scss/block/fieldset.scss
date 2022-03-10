@@ -1,0 +1,23 @@
+.fieldset + .fieldset {
+	margin-top: 40px;
+}
+
+.fieldset--m + .fieldset--m {
+	margin-top: 32px;
+}
+
+.fieldset--s + .fieldset--s {
+	margin-top: 24px;
+}
+
+.fieldset__header {
+	margin-bottom: 8px;
+}
+
+.fieldset__item {
+	margin-top: 16px;
+}
+
+.fieldset__item-s {
+	margin-top: 12px;
+}

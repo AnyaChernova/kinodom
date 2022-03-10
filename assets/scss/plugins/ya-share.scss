@@ -1,0 +1,17 @@
+/*! purgecss start ignore */
+.popup .ya-share2__list {
+	margin-bottom: -5px;
+}
+
+.popup .ya-share2__list.ya-share2__list_direction_horizontal > .ya-share2__item {
+	margin:  0 16px 5px 0;
+}
+
+@include media(s) {
+	.popup .ya-share2__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+/*! purgecss end ignore */

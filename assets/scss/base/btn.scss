@@ -1,0 +1,247 @@
+.btn {
+	font-family: $font-family-title;
+	background-color: $color-brand;
+	color: $color-white;
+	min-height: 56px;
+	padding: 20px;
+	font-size: 16px;
+	font-weight: 600;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+	border-radius: 8px;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	line-height: 1;
+	--baseBtnColor: $color-brand;
+
+	&:hover {
+		background-color: $color-brand-light;
+	}
+
+	&:active {
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+	}
+
+	img {
+		max-width: 100%;
+		max-height: 100%;
+		vertical-align: middle;
+		object-fit: cover;
+	}
+}
+
+.btn.--loading {
+	background-color: $color-brand;
+	pointer-events: none;
+}
+
+.btn:not(.--loading) {
+	&:disabled {
+		background-color: $color-gray-light;
+		box-shadow: none;
+		color: $color-gray-mid;
+	}
+}
+
+.btn--circle {
+	border-radius: 50%;
+
+	img {
+		border-radius: 50%;
+	}
+}
+
+.btn--text {
+	font-family: $font-family;
+	text-transform: unset;
+	letter-spacing: unset;
+	font-weight: normal;
+}
+
+.btn--lite {
+	background-color: transparent;
+	color: $color-brand;
+	box-shadow: none;
+
+	&:hover {
+		background-color: transparent;
+		color: $color-brand-light;
+	}
+}
+
+.btn.--small {
+	min-height: 40px;
+	padding: 12px 20px;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.btn.--badge {
+	min-height: 28px;
+	padding: 4px 8px;
+	font-size: 14px;
+	border-radius: 2px;
+	background-color: $color-inactive;
+	color: $color-text-dark;
+	font-weight: normal;
+	font-family: $font-family;
+	text-transform: unset;
+	letter-spacing: unset;
+	box-shadow: none;
+}
+
+.btn.--icon {
+	color: $color-form;
+
+	&:hover {
+		color: $color-text-brand;
+	}
+}
+
+.btn.--icon.text-brand {
+	color: $color-brand;
+
+	&:hover {
+		color: $color-brand-light;
+	}
+}
+
+.btn.--icon.text-dark {
+	color: $color-text-dark;
+
+	&:hover {
+		color: $color-brand-light;
+	}
+}
+
+.btn.--withIcon {
+	padding: 16px 30px 16px 20px;
+}
+
+.btn.--icon.--small {
+	width: 32px;
+	height: 32px;
+	min-height: 32px;
+	padding: 2px;
+}
+
+.btn.--icon.--small.--pic {
+	padding: 0;
+}
+
+.btn.--icon.--m {
+	width: 40px;
+	height: 40px;
+	min-height: 40px;
+	padding: 2px;
+}
+
+.btn.--icon.--m.--pic {
+	padding: 0;
+}
+
+.btn.--icon.active {
+	color: $color-brand;
+}
+
+.btn.--simple {
+	color: $color-brand;
+}
+
+.btn.--c-white {
+	color: $color-text-dark;
+	background-color: $color-white;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+
+	&:hover {
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+		background-color: $color-white;
+		color: $color-text-brand;
+	}
+
+	&:active {
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+	}
+}
+
+.btn.--c-danger {
+	background-color: $color-danger;
+	color: $color-white;
+
+	&:hover {
+		background-color: $color-accent;
+	}
+}
+
+.btn.--c-success {
+	background-color: $color-success;
+	color: $color-white;
+
+	&:hover {
+		background-color: $color-success;
+	}
+}
+
+.btn.--c-blue {
+	background-color: $color-blue;
+	color: $color-white;
+
+	&:hover {
+		background-color: $color-blue;
+	}
+}
+
+.btn.--copy {
+	min-height: 48px;
+	padding: 11px 20px 8px;
+	font-size: 18px;
+	font-weight: normal;
+	font-family: $font-family;
+	text-transform: unset;
+	letter-spacing: unset;
+}
+
+.btn.--radius {
+	border-radius: 32px;
+}
+
+.btn.--bigRadius {
+	border-radius: 48px;
+}
+
+.btn.--wide {
+	padding-left: 35px;
+	padding-right: 35px;
+}
+
+.btn.--wideExtra {
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.btn.--tab {
+	padding: 4px 8px;
+	height: 28px;
+	min-height: 28px;
+	font-size: 14px;
+	font-weight: normal;
+	font-family: $font-family;
+	text-transform: unset;
+	letter-spacing: unset;
+	border-radius: 2px;
+	background-color: $color-inactive;
+	color: $color-text-dark;
+	box-shadow: none;
+
+	&.active {
+		background-color: $color-text-dark;
+		color: $color-white;
+	}
+}
+
+
+
+
+
+
+
+
