@@ -1,4 +1,4 @@
-# ocd
+# Kinodom app
 
 ## Build Setup
 
